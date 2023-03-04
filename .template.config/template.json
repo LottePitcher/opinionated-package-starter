@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "Lotte Pitcher",
+  "classifications": [
+    "Web",
+    "Umbraco",
+    "Package"
+  ],
+  "name": "Umbraco Package Starter Solution",
+  "description": "An opinionated Umbraco package solution",
+  "identity": "Umbraco.Community.Templates.PackageStarter",
+  "shortName": "umbracopackagestarter",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "PackageStarter.1",
+  "defaultName": "PackageStarter1",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "**/.git/**",
+            "**/.vs/**"
+          ]
+        }
+      ],
+      "rename": {
+        "README_package.md": "README.md"
+      }
+    }
+  ],
+  "symbols": {
+  },
+  "primaryOutputs": [
+    {
+      "path": "PackageStarter.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(!SkipRestore)",
+      "description": "Restore NuGet packages required by this project",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

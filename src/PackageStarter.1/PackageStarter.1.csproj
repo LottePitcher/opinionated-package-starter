@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>PackageStarter._1</Product>
+    <PackageId>PackageStarter._1</PackageId>
+    <Title>PackageStarter._1</Title>
+    <Description>...</Description>
+    <PackageTags>umbraco plugin package</PackageTags>
+    <RootNamespace>PackageStarter._1</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="10.4.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\PackageStarter.1\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="App_Plugins\PackageStarter.1\lang\en.xml" />
+  </ItemGroup>
+</Project>
