@@ -4,12 +4,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>PackageStarter</Product>
-    <PackageId>PackageStarter</PackageId>
+    <Product>Umbraco.Community.PackageStarter</Product>
+    <PackageId>Umbraco.Community.PackageStarter</PackageId>
     <Title>PackageStarter</Title>
     <Description>...</Description>
-    <PackageTags>umbraco plugin package</PackageTags>
+    <PackageTags>umbraco;umbraco-marketplace</PackageTags>
     <RootNamespace>Umbraco.Community.PackageStarter</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+    <Authors>AuthorName</Authors>
+    <Copyright>CurrentYear © AuthorName</Copyright>
+    <PackageProjectUrl>https://github.com/GitHubUser/GitHubRepo</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GitHubUser/GitHubRepo</RepositoryUrl>
+    <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +29,13 @@
   <ItemGroup>
     <Content Include="App_Plugins\PackageStarter\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\README_nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
