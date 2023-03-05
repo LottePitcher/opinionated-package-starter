@@ -33,6 +33,11 @@
       }
     }
   ],
+  "guids": [
+    "BAD983C8-B7F9-4F1D-B54E-E560A65B44CF",
+    "C2EA4B1C-4FCB-4AA4-A80B-EB446FFF450D",
+    "EE4D10A0-BF63-41FD-925B-0560F90AD4F8"
+  ],
   "symbols": {
     "currentYear": {
       "type": "generated",
