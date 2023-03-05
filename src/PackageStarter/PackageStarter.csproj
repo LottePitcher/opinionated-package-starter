@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Content Include="App_Plugins\PackageStarter\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+    <None Include="build\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 
   <ItemGroup>
