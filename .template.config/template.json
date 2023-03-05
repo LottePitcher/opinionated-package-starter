@@ -7,7 +7,7 @@
     "Package"
   ],
   "name": "Umbraco Package Starter Solution",
-  "description": "An opinionated Umbraco package solution",
+  "description": "A solution template for creating an Umbraco package with a test site; plus nuget, Umbraco Marketplace and GitHub configuration",
   "identity": "Umbraco.Community.Templates.PackageStarter",
   "shortName": "umbracopackagestarter",
   "tags": {

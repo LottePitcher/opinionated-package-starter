@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>PackageStarter._1</Product>
-    <PackageId>PackageStarter._1</PackageId>
-    <Title>PackageStarter._1</Title>
+    <Product>PackageStarter</Product>
+    <PackageId>PackageStarter</PackageId>
+    <Title>PackageStarter</Title>
     <Description>...</Description>
     <PackageTags>umbraco plugin package</PackageTags>
-    <RootNamespace>PackageStarter._1</RootNamespace>
+    <RootNamespace>Umbraco.Community.PackageStarter</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,10 +19,7 @@
 
   <ItemGroup>
     <Content Include="App_Plugins\PackageStarter\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <None Include="build\**" Pack="true" PackagePath="buildTransitive" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="App_Plugins\PackageStarter\lang\en.xml" />
-  </ItemGroup>
 </Project>

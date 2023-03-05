@@ -1,16 +1,21 @@
 # An Opinionated Package Starter Template
 
+[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.Templates.PackageStarter?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter/)
+[![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Templates.PackageStarter?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter)
+[![GitHub license](https://img.shields.io/github/license/LottePitcher/
+opinionated-package-starter?color=8AB803)](LICENSE)
+
 Use this `dotnet new` template to get a head start when creating Umbraco Packages for v10+.
 
 I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. All the other stuff involved in releasing a package and having a well-maintained open source GitHub repository has been done already.
 
-None of these decisions are irreversible. Once you've used the template you can change whatever you need to. Please make sure you read this readme so you understand what choices you are starting with so that you can change them where necessary before you push anything to GitHub.
+Of course none of these decisions are irreversible. Once you've used the template you can change whatever you need to. Please make sure you read this readme so you understand what choices you are starting with so that you can change them where necessary before you push to GitHub, and definitely before you publish to nuget!
 
 ## Template details
 
 ### What's wrong with the Umbraco Package template?
 
-Nothing, find it [here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template)! It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, configure it for pushing to nuget, work out how you're going to push to nuget, add certain files for a well maintained repo ...
+Nothing, find it [here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template)! It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, configure it for nuget, work out how you're going to push to nuget, add certain files for a well maintained repo ...
 
 Whereas this template will create a folder with:
 
@@ -40,11 +45,15 @@ Because it's the current Long Term Support release. I believe plenty of sites wi
 
 Honest answer is that I don't understand RCLs well enough yet! Get in touch if you want to enlighten me.
 
+#### Why a 'Umbraco.Community.* nuget package id?
+
+If you don't have a company or personal brand to use as a prefix, then this is a well used convention for Umbraco community projects.
+
 ## Using the template
 
 ### Installing the template
 
-TODO
+`dotnet new install Umbraco.Community.Templates.PackageStarter`
 
 ### Using the template
 
