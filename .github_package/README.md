@@ -16,11 +16,7 @@ TODO *provide any other instructions for someone using your package*
 
 ## Contributing
 
-Contributions to this package are most welcome! 
-
-There is a test site in the solution to make working with this repository easier.
-
-TODO: *instructions on how to log in to test site assuming you have committed a db with some content*
+Contributions to this package are most welcome! Please read the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## Acknowledgments
 

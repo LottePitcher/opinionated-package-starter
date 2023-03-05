@@ -1,0 +1,25 @@
+name: "Bug report"
+description: "File a bug report to help improve this template."
+labels: "bug"
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to report this issue as thoroughly as possible.
+- type: input
+  id: "TemplateVersion"
+  attributes:
+    label: "Which version of the template have you installed?"
+    description: "Leave blank if you're not sure: the latest version will be assumed."
+  validations:
+    required: false
+- type: textarea
+  id: "description"
+  attributes:
+    label: "Bug description"
+    description: "Write a description of the bug."
+    description: "Remember that you can format code and logs nicely with the `<>` button"
+    placeholder: >
+      Try to explain it as clearly as possible.
+  validations:
+    required: true

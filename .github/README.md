@@ -16,7 +16,7 @@ Whereas this template will create a folder with:
 
 - A new solution (.sln)
 - A package project ready for you to add your code. There's a lang .xml file in the right place to remind you to use those where feasible (instead of hard-coding text in your views)
-- A test site referencing the package project
+- A test site referencing the package project with a SQLite db
 - A GitHub action for publishing to nuget
 - A good start on:
    - The readme for your GitHub repository
@@ -31,7 +31,6 @@ Whereas this template will create a folder with:
 - Umbraco version: v10.4
 - Allow telemetry: true
 - nuget package Id: `Umbraco.Community.YourPackageName`
-- App_Plugins or RCLs: App_Plugins
 
 #### Why are you targeting v10?
 
@@ -51,11 +50,9 @@ TODO
 
 TODO
 
-### Next steps
-
-TODO
-
 ## And Finally
+
+TODO: WHAT ELSE?!
 
 ### Contributing
 

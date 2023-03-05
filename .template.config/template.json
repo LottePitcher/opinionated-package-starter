@@ -28,15 +28,26 @@
         }
       ],
       "rename": {
-        "README_package.md": "README.md"
+        ".github_package/": ".github/"
       }
     }
   ],
   "symbols": {
+    "currentYear": {
+      "type": "generated",
+      "generator": "now",
+      "replaces": "CurrentYear",
+      "parameters": {
+        "format": "yyyy"
+      }
+    }
   },
   "primaryOutputs": [
     {
-      "path": "PackageStarter.csproj"
+      "path": "src/PackageStarter/PackageStarter.csproj"
+    },   
+    {
+      "path": "src/PackageStarter/PackageStarter.TestSite.csproj"
     }
   ],
   "postActions": [
