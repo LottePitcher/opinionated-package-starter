@@ -1,0 +1,14 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json", 
+    "AuthorDetails": {
+      "Name": "AuthorName",
+      "ImageUrl": "https://github.com/GitHubUser.png"
+    },
+    "Category": "",
+    "Description": "",
+    "LicenseTypes": [ "Free" ],
+    "IssueTrackerUrl": "https://github.com/GitHubUser/GitHubRepo/issues",
+    "PackageType": "Package",
+    "Tags": [],
+    "Title": "PackageStarter"
+  }

@@ -7,7 +7,7 @@
     "Package"
   ],
   "name": "Umbraco Package Starter Solution",
-  "description": "A solution template for creating an Umbraco package with a test site; plus nuget, Umbraco Marketplace and GitHub configuration",
+  "description": "A solution template for creating an Umbraco package with a test site already configured for GitHub, nuget and the Umbraco Marketplace",
   "identity": "Umbraco.Community.Templates.PackageStarter",
   "shortName": "umbracopackagestarter",
   "tags": {
@@ -39,6 +39,24 @@
     "EE4D10A0-BF63-41FD-925B-0560F90AD4F8"
   ],
   "symbols": {
+    "authorName": {
+      "description": "The name of the author for the license and nuget.",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "AuthorName"
+    },
+    "githubUser": {
+      "description": "The GitHub username for the repository.",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "GitHubUser"
+    },
+    "githubRepo": {
+      "description": "The name of the GitHub repository.",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "GitHubRepo"
+    },
     "currentYear": {
       "type": "generated",
       "generator": "now",
@@ -47,7 +65,7 @@
         "format": "yyyy"
       }
     },
-    "HttpPort": {
+    "httpPort": {
       "type": "generated",
       "generator": "port",
       "parameters": {
@@ -55,7 +73,7 @@
       },
       "replaces": "43339"
     },
-    "HttpsPort": {
+    "httpsPort": {
       "type": "generated",
       "generator": "port",
       "parameters": {
