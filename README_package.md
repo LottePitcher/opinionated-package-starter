@@ -1,7 +1,7 @@
-# PackageStarter.1
+# PackageStarter
 
-[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.PackageStarter.1?color=cc9900)](https://www.nuget.org/packages/Our.Umbraco.Community.PackageStarter.1/)
-[![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.PackageStarter.1?color=0273B3)](https://www.nuget.org/packages/Our.Umbraco.Community.PackageStarter.1)
+[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.PackageStarter?color=cc9900)](https://www.nuget.org/packages/Our.Umbraco.Community.PackageStarter/)
+[![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.PackageStarter?color=0273B3)](https://www.nuget.org/packages/Our.Umbraco.Community.PackageStarter)
 [![GitHub license](https://img.shields.io/github/license/GitHubUser/GitHubRepo?color=8AB803)](LICENSE)
 
 TODO: describe your package

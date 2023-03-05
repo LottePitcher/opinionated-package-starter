@@ -14,7 +14,7 @@
     "language": "C#",
     "type": "solution"
   },
-  "sourceName": "PackageStarter.1",
+  "sourceName": "PackageStarter",
   "defaultName": "PackageStarter1",
   "preferNameDirectory": true,
   "sources": [
