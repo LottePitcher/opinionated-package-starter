@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PackageMsBuildContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\PackageStarter\**\*.*</PackageMsBuildContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyPackageMsBuildAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <PackageMsBuildContentFiles Include="$(PackageMsBuildContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying PackageStarter files: $(PackageMsBuildContentFilesPath) - #@(PackageMsBuildContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(PackageMsBuildContentFiles)" DestinationFiles="@(PackageMsBuildContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\PackageStarter\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearPackageMsBuildAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <PackageMsBuildDir Include="$(MSBuildProjectDirectory)\App_Plugins\PackageStarter\" />
+    </ItemGroup>
+    <Message Text="Clear old PackageStarter data" Importance="high" />
+    <RemoveDir Directories="@(PackageMsBuildDir)" />
+  </Target>
+</Project>

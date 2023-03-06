@@ -26,7 +26,7 @@
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
   </PropertyGroup>
 
-  <Import Project="..\PackageStarter\buildTransitive\PackageStarter.targets" />
+  <Import Project="..\PackageStarter\buildTransitive\Umbraco.Community.PackageStarter.targets" />
   <ItemGroup>
     <ProjectReference Include="..\PackageStarter\PackageStarter.csproj" />
   </ItemGroup>
