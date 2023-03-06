@@ -24,12 +24,14 @@
           "exclude": [
             "**/.git/**",
             "**/.vs/**",
-            ".github/**"
+            ".github/**",
+            "docs/**"
           ]
         }
       ],
       "rename": {
-        ".github_package/": ".github/"
+        ".github_package/": ".github/",
+        "docs_package/": "docs/"
       }
     }
   ],

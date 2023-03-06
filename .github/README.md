@@ -6,8 +6,10 @@
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](LICENSE)
 -->
 
-> **Warning**
-> This is a beta version of the template. I would love someone to give it a go and let me know how they get on!
+> **Warning**  
+> 
+> This is a beta version of the template.  
+> I would love someone to give it a go and let me know how they get on!
 
 Use this `dotnet new` template to get a head start when creating Umbraco Packages for v10+.
 
@@ -55,7 +57,7 @@ If you don't have a company or personal brand to use as a prefix, then this is a
 
 ## Using the template
 
-Please read the [instructions](Using The Template.md) for how to install the template and use it.
+Please read the [instructions](UsingTheTemplate.md) for how to install the template and use it.
 
 ### Contributing
 
@@ -66,3 +68,6 @@ TODO: Add instructions on how to install and work on templates locally
 ### Acknowledgements
 
 A lot of the decisions were made as a result of collaborating with [Lee Kelleher](https://github.com/LeeKelleher) - the creator of [Contentment](https://github.com/leekelleher/umbraco-contentment) and many other Umbraco packages - whilst developing my [Admin Only Property](https://github.com/LottePitcher/umbraco-admin-only-property) package. So big #H5YR for all your help Lee 🙏!
+
+#### Template icon
+"out of the box" by Weltenraser from <a href="https://thenounproject.com/browse/icons/term/out-of-the-box/" target="_blank" title="out of the box Icons">Noun Project</a>

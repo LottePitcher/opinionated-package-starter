@@ -1,7 +1,9 @@
 # Using the Template
 
-> **Warning**
-> This is a beta version of the template. I would love someone to give it a go and let me know how they get on!
+> **Warning**  
+> 
+> This is a beta version of the template.  
+> I would love someone to give it a go and let me know how they get on!
 
 ## Installing the template
 
