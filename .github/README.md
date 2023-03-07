@@ -6,28 +6,27 @@
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](LICENSE)
 -->
 
-> **Warning**  
-> 
-> This is a beta version of the template.  
-> I would love someone to give it a go and let me know how they get on!
+Use this `dotnet new` template to get a head start for creating, releasing and maintaining Umbraco Packages for v10+.
 
-Use this `dotnet new` template to get a head start when creating Umbraco Packages for v10+.
-
-I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. All the other stuff involved in releasing a package and having a well-maintained open source GitHub repository has been done already.
+I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. A lot of the other stuff involved in releasing a package and having a well-maintained open source GitHub repository has been done already.
 
 Of course none of these decisions are irreversible. Once you've used the template you can change whatever you need to. Please make sure you read this readme so you understand what choices you are starting with so that you can change them where necessary before you push to GitHub, and definitely before you publish to nuget!
+
+> **Warning**  
+> 
+> This is a beta version of the template. I have tested it as far as installing the resulting nuget package locally and it "works on my machine". There is no way to test pushing to nuget but as I've been through that process before I do expect it to work. If you do try this template please let me know how you get on!
 
 ## Template details
 
 ### What's wrong with the Umbraco Package template?
 
-Nothing, find it [here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template)! It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, configure it for nuget, work out how you're going to push to nuget, add certain files for a well maintained repo ...
+Nothing! You can [find it here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template). It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, how to configure it for nuget, how you're going to release to nuget, add certain files for a well maintained repo ...
 
 Whereas this template will create a folder with:
 
 - A new solution (.sln)
 - A package project ready for you to add your code. There's a lang .xml file in the right place to remind you to use those where feasible (instead of hard-coding text in your views)
-- A test site referencing the package project with a SQLite db
+- A test site referencing the package project
 - A GitHub action for publishing to nuget
 - A good start on:
    - The readme for your GitHub repository
@@ -40,20 +39,24 @@ Whereas this template will create a folder with:
 
 - License: MIT
 - Umbraco version: v10.4
-- Allow telemetry: true
 - nuget package Id: `Umbraco.Community.YourPackageName`
+- App_Plugins or RCLs: App_Plugins
+
+#### Why MIT license?
+
+Because Umbraco CMS is released with an MIT license, and I've assumed you're releasing this as an open source package too.
 
 #### Why are you targeting v10?
 
 Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ...
 
-#### Why aren't you using Razor Class Libraries?
-
-Honest answer is that I don't understand RCLs well enough yet! Get in touch if you want to enlighten me.
-
 #### Why a 'Umbraco.Community.* nuget package id?
 
 If you don't have a company or personal brand to use as a prefix, then this is a well used convention for Umbraco community projects.
+
+#### Why aren't you using Razor Class Libraries?
+
+Honest answer is that I don't understand RCLs well enough yet! Get in touch if you want to enlighten me.
 
 ## Using the template
 

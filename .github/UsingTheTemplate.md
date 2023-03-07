@@ -1,15 +1,16 @@
 # Using the Template
 
-> **Warning**  
-> 
-> This is a beta version of the template.  
-> I would love someone to give it a go and let me know how they get on!
-
 ## Installing the template
 
 `dotnet new install Umbraco.Community.Templates.PackageStarter`
 
 ## Using the template
+
+> **Warning**  
+> 
+> This is a beta version of the template. At the moment please use it from the command line. If you use this from within Visual Studio to create a new solution you will end up with two solution files - a known issue!
+
+`dotnew new umbracopackagestarter -n YourProjectName`
 
 TODO
 
