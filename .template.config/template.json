@@ -31,7 +31,8 @@
       ],
       "rename": {
         ".github_package/": ".github/",
-        "docs_package/": "docs/"
+        "docs_package/": "docs/",
+        "src/PackageStarter.TestSite/.gitignore_package": "src/PackageStarter.TestSite/.gitignore"
       }
     }
   ],

@@ -41,6 +41,7 @@ Whereas this template will create a folder with:
 - Umbraco version: v10.4
 - nuget package Id: `Umbraco.Community.YourPackageName`
 - App_Plugins or RCLs: App_Plugins
+- Initial version number: 0.1.0
 
 #### Why MIT license?
 
@@ -58,19 +59,24 @@ If you don't have a company or personal brand to use as a prefix, then this is a
 
 Honest answer is that I don't understand RCLs well enough yet! Get in touch if you want to enlighten me.
 
+#### Why 0.1.0 as the initial version number?
+
+The project is created with version 0.1.0 as this fits the [SemVer](https://semver.org/) scheme. The version number is set in the .csproj of the package project.
+
 ## Using the template
 
 Please read the [instructions](UsingTheTemplate.md) for how to install the template and use it.
 
 ### Contributing
 
-Yes feedback, thoughts, issues are of course most welcome! When I next have a package to create I'll be using this template so I'd like it to be as complete as possible.
+Yes feedback, thoughts, issues, pull requests... are of course most welcome! 
 
-TODO: Add instructions on how to install and work on templates locally
+Please read the [Contributing Guidelines](CONTRIBUTING.md).
 
 ### Acknowledgements
 
-A lot of the decisions were made as a result of collaborating with [Lee Kelleher](https://github.com/LeeKelleher) - the creator of [Contentment](https://github.com/leekelleher/umbraco-contentment) and many other Umbraco packages - whilst developing my [Admin Only Property](https://github.com/LottePitcher/umbraco-admin-only-property) package. So big #H5YR for all your help Lee 🙏!
+A lot of the decisions were made whilst collaborating with [Lee Kelleher](https://github.com/LeeKelleher) (the creator of [Contentment](https://github.com/leekelleher/umbraco-contentment) and many other Umbraco packages) whilst developing my [Admin Only Property](https://github.com/LottePitcher/umbraco-admin-only-property) package. So big #H5YR for all your help Lee 🙏!
 
 #### Template icon
+
 "out of the box" by Weltenraser from <a href="https://thenounproject.com/browse/icons/term/out-of-the-box/" target="_blank" title="out of the box Icons">Noun Project</a>

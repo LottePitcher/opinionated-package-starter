@@ -6,6 +6,14 @@
 
 TODO: describe your package
 
+<!--
+Including screenshots is a really good idea! 
+
+If you put images into /docs/screenshots, then you would reference them in this readme as, for example:
+
+<img alt="..." src="https://github.com/GitHubUser/GitHubRepo/blob/develop/docs/screenshots/screenshot.png">
+-->
+
 ## Installation
 
 Add the package to an existing Umbraco website (v10.4+) from nuget:

@@ -10,9 +10,21 @@
 > 
 > This is a beta version of the template. At the moment please use it from the command line. If you use this from within Visual Studio to create a new solution you will end up with two solution files - a known issue!
 
-`dotnew new umbracopackagestarter -n YourProjectName`
+`dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"`
 
-TODO
+Parameters:
+- `-n` : the name of your project. This will mean that:
+   - The solution file will be: `YourProjectName.sln`
+   - A project for the package will be in a folder: `\YourProjectName`
+   - A test site for the package will be in a folder: `\YourProjectName.TestSite`
+   - The nuget package id will be set as : `Umbraco.Community.YourProjectName`
+- `-authorName` : the display name of the author, e.g. "Lotte Pitcher"
+- `-githubUser` : the username of the GitHub user/organisation that will be hosting the repository
+- `-githubRepo` : the GitHub repository name for the project
+
+### Logo
+
+TODO - where to put, and configure .csproj for nuget
 
 ## Pushing to GitHub
 
