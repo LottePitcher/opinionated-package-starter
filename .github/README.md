@@ -14,7 +14,7 @@ Of course none of these decisions are irreversible. Once you've used the templat
 
 > **Warning**  
 > 
-> This is a beta version of the template. I have tested it as far as installing the resulting nuget package locally and it "works on my machine". There is no way to test pushing to nuget but as I've been through that process before I do expect it to work. If you do try this template please let me know how you get on!
+> This is a first version of the template. I have tested it as far as installing the resulting nuget package locally and it "works on my machine". There is no way to test pushing to nuget but as I've been through that process before I do expect it to work. If you do try this template please let me know how you get on!
 
 ## Template details
 

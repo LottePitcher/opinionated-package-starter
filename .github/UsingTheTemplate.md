@@ -8,9 +8,13 @@
 
 > **Warning**  
 > 
-> This is a beta version of the template. At the moment please use it from the command line. If you use this from within Visual Studio to create a new solution you will end up with two solution files - a known issue!
+> This is a first version of the template. At the moment please use it from the command line. If you use this from within Visual Studio to create a new solution you will end up with two solution files - a known issue!
 
-`dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"`
+Open a command prompt in a location where you want your new project repository folder to be created. For example, if you are in `c:\source\` and use this template to create a project called 'MyNewProject' then the template will create the folder `c:\source\MyNewProject\`.
+
+```
+dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"
+```
 
 Parameters:
 - `-n` : the name of your project. This will mean that:

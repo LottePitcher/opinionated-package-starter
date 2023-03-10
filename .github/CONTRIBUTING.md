@@ -6,16 +6,22 @@ If you have an idea for a feature to add to this template then please raise a fe
 
 ## Working locally 
 
-To develop this template you should install it individually, by pointing the install command at a folder. For example: 
+To work on this template:
 
-```
-dotnet new install c:\source\opinionated-package-starter\template
-```
+1. Fork and clone this repository
 
-Locally installed templates must be uninstalled using the full path:
+2. If you already have the nuget package for the template installed, please uninstall it:
 
-```
-dotnet new uninstall c:\source\opinionated-package-starter\template
-```
+`dotnet new uninstall Umbraco.Community.Templates.PackageStarter`
 
-If you are changing the template you do not need to uninstall and reinstall each time UNLESS you are changing the parameters (symbols) in `\template.template.config/template.json`.
+3. Install the template from your local directory, e.g. 
+
+`dotnet new install c:\source\opinionated-package-starter\template`
+
+Please note that:
+
+- Locally installed templates must be uninstalled using the full path:
+
+`dotnet new uninstall c:\source\opinionated-package-starter\template`
+
+- If you are changing the template you do not need to uninstall and reinstall each time UNLESS you are changing the parameters (symbols) in `\template\template.config/template.json`.
