@@ -79,4 +79,4 @@ A lot of the decisions were made whilst collaborating with [Lee Kelleher](https:
 
 #### Template icon
 
-"out of the box" by Weltenraser from <a href="https://thenounproject.com/browse/icons/term/out-of-the-box/" target="_blank" title="out of the box Icons">Noun Project</a>
+"out of the box" by Yoyon Pujiyono from <a href="https://thenounproject.com/browse/icons/term/out-of-the-box/" target="_blank" title="out of the box Icons">Noun Project</a>

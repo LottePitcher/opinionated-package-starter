@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>Umbraco.Community.Templates.PackageStarter</PackageId>
+    <Title>Umbraco.Community.Templates.PackageStarter</Title>
+    <Authors>Lotte Pitcher</Authors>
+    <Description>An Opinionated Umbraco Package Starter Template</Description>
+    <PackageTags>dotnet-new;templates;umbraco</PackageTags>
+
+    <TargetFramework>net6.0</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <Copyright>2023 © Lotte Pitcher</Copyright>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/LottePitcher/opinionated-package-starter</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/LottePitcher/opinionated-package-starter</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="template\**\*" Exclude="template\**\bin\**;template\**\obj\**" />
+    <Compile Remove="**\*" />
+    <None Include="docs\README_nuget.md" Pack="true" PackagePath="\"/>
+    <None Include="docs\assets\logo\logo.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
