@@ -12,9 +12,7 @@
 
 Open a command prompt in a location where you want your new project repository folder to be created. For example, if you are in `c:\source\` and use this template to create a project called 'MyNewProject' then the template will create the folder `c:\source\MyNewProject\`.
 
-```
-dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"
-```
+`dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"`
 
 Parameters:
 - `-n` : the name of your project. This will mean that:
@@ -40,19 +38,20 @@ Please note that the project has already been configured with the `umbraco-marke
 
 You can test how things should work/look before publishing as follows:
 
-- Test nuget package works by adding via local nuget command
-- Check how nuget will 'see' your package by using nuget package tool
-- https://marketplace.umbraco.com/validate and the JSON option
+- Test nuget package works by adding via local nuget command (TOD)
+- Check how nuget will 'see' your package by using nuget Package Explorer (LINK?)
+- Validate Marketplace configuration from https://marketplace.umbraco.com/validate and the JSON option
 
 Happy? If so, let's get this published!
 
 > **Warning**
-> Please make sure you are happy with the nuget package id before you continue. Titles, descriptions can all be changed, but you can't change the id of a nuget package once created, you can only deprecate it.
+> 
+> Please make sure you are happy with the nuget package id before you continue. Titles, descriptions can all be changed, but you can't change the id of a nuget package once created, you can only deprecate it and start a new one.
 
 1. Update the version number by TODO
 2. Add corresponding tag in Git
-3. Push to GitHub - a GitHub action should then release the new version to GitHub
-4. Add GitHub release notes
+3. Push to GitHub - a GitHub action should then release the new version to nuget
+4. Add GitHub release notes TODO
 
 ## Improve your package on the Marketplace
 
