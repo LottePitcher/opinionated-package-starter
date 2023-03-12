@@ -12,7 +12,14 @@ namespace Umbraco.Community.PackageStarter
             {
                 PackageName = "PackageStarter",
                 Version = assembly.GetName()?.Version?.ToString(3) ?? "0.1.0",
-                AllowPackageTelemetry = true
+                AllowPackageTelemetry = true,
+                Scripts = new string[] {
+                    // "files here"
+                },
+                Stylesheets = new string[]
+                {
+                    // "stylesheets here"
+                }
             });
         }
     }

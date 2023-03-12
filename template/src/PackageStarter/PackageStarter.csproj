@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StaticWebAssetBasePath>App_Plugins</StaticWebAssetBasePath>
     <ContentTargetFolders>.</ContentTargetFolders>
     <Product>Umbraco.Community.PackageStarter</Product>
     <PackageId>Umbraco.Community.PackageStarter</PackageId>
@@ -24,11 +25,6 @@
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="10.4.0" />
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="App_Plugins\PackageStarter\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 
   <ItemGroup>
