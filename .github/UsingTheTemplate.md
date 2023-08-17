@@ -39,6 +39,7 @@ Please note that the project has already been configured with the `umbraco-marke
 You can test how things should work/look before publishing as follows:
 
 - Test nuget package works by adding via local nuget command (TOD)
+   - 
 - Check how nuget will 'see' your package by using nuget Package Explorer (LINK?)
 - Validate Marketplace configuration from https://marketplace.umbraco.com/validate and the JSON option
 
@@ -48,10 +49,14 @@ Happy? If so, let's get this published!
 > 
 > Please make sure you are happy with the nuget package id before you continue. Titles, descriptions can all be changed, but you can't change the id of a nuget package once created, you can only deprecate it and start a new one.
 
-1. Update the version number by TODO
+1. Update the version number
+   1. Open `src/YourProjectName/YourProjectName.csproj`
+   2. Change the `<Version>...</Version>` - I use [Semantic Versioning](https://semver.org/)
 2. Add corresponding tag in Git
 3. Push to GitHub - a GitHub action should then release the new version to nuget
-4. Add GitHub release notes TODO
+4. Create a release on GitHub:
+   1. On the home page of your repo in GitHub click the 'X tags' link
+   2. Your new version should be listed: click the three dots and 'Create Release'
 
 ## Improve your package on the Marketplace
 
@@ -60,6 +65,8 @@ There is more information that you can add to the `umbraco-marketplace.json` fil
 Check the [instructions on the Marketplace](https://marketplace.umbraco.com/listing) for more information.
 
 Once you've updated the .json file and pushed to GitHub, the Marketplace should reindex and update the package details soon. If things don't look as you expect, use the validation tool.
+
+If you don't want to wait... check instructions for forcing marketplace to update immediately for your package.
 
 ## Publishing updates
 
