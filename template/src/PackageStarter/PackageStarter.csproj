@@ -14,7 +14,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>0.1.0</Version>
     <Authors>AuthorName</Authors>
-    <Copyright>CurrentYear © AuthorName</Copyright>
+    <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © AuthorName</Copyright>
     <PackageProjectUrl>https://github.com/GitHubUser/GitHubRepo</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GitHubUser/GitHubRepo</RepositoryUrl>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
