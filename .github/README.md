@@ -9,15 +9,11 @@ I've called it an 'opinionated' package starter template because lots of decisio
 
 Of course none of these decisions are irreversible. Once you've used the template you can change whatever you need to. Please make sure you read this readme so you understand what choices you are starting with so that you can change them where necessary before you push to GitHub, and definitely before you publish to nuget!
 
-> **Warning**  
-> 
-> This is a first version of the template. I have tested it as far as installing the resulting nuget package locally and it "works on my machine". There is no way to test pushing to nuget but as I've been through that process before I do expect it to work. If you do try this template please let me know how you get on!
-
 ## Template details
 
 ### What's wrong with the Umbraco Package template?
 
-Nothing! You can [find it here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template). It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, how to configure it for nuget, how you're going to release to nuget, add certain files for a well maintained repo ...
+Nothing! You can [find a link to it here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template). It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, how to configure it for nuget, how you're going to release to nuget, add certain files for a well maintained repo ...
 
 Whereas this template will create a folder with:
 
@@ -35,9 +31,9 @@ Whereas this template will create a folder with:
 ### What key decisions have been made?
 
 - License: MIT
-- Umbraco version: v10.4
+- Umbraco version: v10.0.0
 - nuget package Id: `Umbraco.Community.YourPackageName`
-- App_Plugins or RCLs: App_Plugins
+- 'App_Plugins' or Razor Class Library: RCL
 - Initial version number: 0.1.0
 
 #### Why MIT license?
@@ -46,15 +42,17 @@ Because Umbraco CMS is released with an MIT license, and I've assumed you're rel
 
 #### Why are you targeting v10?
 
-Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ...
+Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ... If there is a need to restrict your package to a version of 10 higher than 10.0.0 then you should raise the dependency in your package. Refer to [issue 10](GH-10) for a discussion about this.
 
 #### Why a 'Umbraco.Community.* nuget package id?
 
 If you don't have a company or personal brand to use as a prefix, then this is a well used convention for Umbraco community projects.
 
-#### Why aren't you using Razor Class Libraries?
+#### Why are you using a Razor Class Library?
 
-Honest answer is that I don't understand RCLs well enough yet! Get in touch if you want to enlighten me.
+Because RCLs mean that your package assets are added virtually to your project: you don't need a targets file in your test site to physically copy the App_Plugins contents over. It also makes it easier for people who install your package as they don't have to commit your App_Plugins folder to their project repository.
+
+If you want to understand more about RCLs, and what is involved in converting a package to be a Razor Class Library, please refer to [PR 8](GH-8).
 
 #### Why 0.1.0 as the initial version number?
 
