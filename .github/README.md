@@ -42,7 +42,7 @@ Because Umbraco CMS is released with an MIT license, and I've assumed you're rel
 
 #### Why are you targeting v10?
 
-Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ... If there is a need to restrict your package to a version of 10 higher than 10.0.0 then you should raise the dependency in your package. Refer to [issue 10](GH-10) for a discussion about this.
+Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ... If there is a need to restrict your package to a version of 10 higher than 10.0.0 then you should raise the dependency in your package. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for a discussion about this.
 
 #### Why a 'Umbraco.Community.* nuget package id?
 
@@ -52,7 +52,7 @@ If you don't have a company or personal brand to use as a prefix, then this is a
 
 Because RCLs mean that your package assets are added virtually to your project: you don't need a targets file in your test site to physically copy the App_Plugins contents over. It also makes it easier for people who install your package as they don't have to commit your App_Plugins folder to their project repository.
 
-If you want to understand more about RCLs, and what is involved in converting a package to be a Razor Class Library, please refer to [PR 8](GH-8).
+If you want to understand more about RCLs, and what is involved in converting a package to be a Razor Class Library, please refer to [PR 8](https://github.com/LottePitcher/opinionated-package-starter/pull/8).
 
 #### Why 0.1.0 as the initial version number?
 
