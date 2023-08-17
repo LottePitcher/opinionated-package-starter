@@ -12,7 +12,18 @@ namespace Umbraco.Community.PackageStarter
             {
                 PackageName = "PackageStarter",
                 Version = assembly.GetName()?.Version?.ToString(3) ?? "0.1.0",
-                AllowPackageTelemetry = true
+                AllowPackageTelemetry = true,
+                Scripts = new string[] {
+                    // List any Script files
+                    // Urls should start '/App_Plugins/PackageStarter/' not '/wwwroot/PackageStarter/', e.g.
+                    // "/App_Plugins/PackageStarter/Scripts/scripts.js"
+                },
+                Stylesheets = new string[]
+                {
+                    // List any Stylesheet files
+                    // Urls should start '/App_Plugins/PackageStarter/' not '/wwwroot/PackageStarter/', e.g.
+                    // "/App_Plugins/PackageStarter/Styles/styles.css"
+                }
             });
         }
     }

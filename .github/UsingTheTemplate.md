@@ -24,6 +24,13 @@ Parameters:
 - `-githubUser` : the username of the GitHub user/organisation that will be hosting the repository
 - `-githubRepo` : the GitHub repository name for the project
 
+### Where do I put my files?
+
+Put your files in the package project:
+
+- C# files can go in the root of the project folder, or in sub-folders: that's completely up to you!
+- Script and stylesheet files must be put somewhere under `\wwwroot\YourProjectName\`. Remember to add all your script and stylesheet files to the manifest filter (`\YourProjectNameManifestFilter.cs`)
+
 ### Logo
 
 TODO - where to put, and configure .csproj for nuget
