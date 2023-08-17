@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
     <PackageId>Umbraco.Community.Templates.PackageStarter</PackageId>
     <Title>Umbraco.Community.Templates.PackageStarter</Title>
     <Authors>Lotte Pitcher</Authors>

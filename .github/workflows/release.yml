@@ -1,0 +1,32 @@
+Name: Release Package
+
+# This action will start when a correctly formatted tag is pushed (e.g. 0.1.0)
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+ 
+    - name: Build
+      run: dotnet build .\template-pack.csproj -c Release /p:Version=${{github.ref_name}}
+
+    - name: Pack
+      run: dotnet pack .\template-pack.csproj -c Release /p:Version=${{github.ref_name}} --no-build --output .
+
+    - name: Push to NuGet
+      run: dotnet nuget push **\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
