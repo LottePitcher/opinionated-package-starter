@@ -1,6 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Release Package
+
+# This action will start when a correctly formatted tag is pushed (e.g. 0.1.0)
 
 on:
   push:
