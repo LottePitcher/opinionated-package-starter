@@ -82,12 +82,31 @@
         "fallback": 5001
       },
       "replaces": "44390"
+    },
+    "friendlyPackageNameGenerated": {
+      "type": "derived",
+      "valueSource": "name",
+      "replaces": "FriendlyPackageName",
+      "valueTransform": "PascalCaseToSpaces"
+    },
+    "friendlyPackageName": {
+      "description": "The friendly name of the package.",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "FriendlyPackageName"
+    }
+  },
+  "forms": {
+    "PascalCaseToSpaces": {
+      "identifier": "replace",
+      "pattern": "([A-Z][a-z]+)",
+      "replacement": "$1 "
     }
   },
   "primaryOutputs": [
     {
       "path": "src/PackageStarter/PackageStarter.csproj"
-    },   
+    },
     {
       "path": "src/PackageStarter/PackageStarter.TestSite.csproj"
     }
