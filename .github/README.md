@@ -31,7 +31,7 @@ Whereas this template will create a folder with:
 ### What key decisions have been made?
 
 - License: MIT
-- Umbraco version: v10.0.0
+- Umbraco version: v13.0.0
 - nuget package Id: `Umbraco.Community.YourPackageName`
 - 'App_Plugins' or Razor Class Library: RCL
 - Initial version number: 0.1.0
@@ -40,9 +40,9 @@ Whereas this template will create a folder with:
 
 Because Umbraco CMS is released with an MIT license, and I've assumed you're releasing this as an open source package too.
 
-#### Why are you targeting v10?
+#### Why are you targeting v13?
 
-Because it's the current Long Term Support release. I believe plenty of sites will be staying on v10 for a while ... If there is a need to restrict your package to a version of 10 higher than 10.0.0 then you should raise the dependency in your package. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for a discussion about this.
+Because it's the current Long Term Support release. I believe plenty of sites will be staying on v13 for a while ... If there is a need to restrict your package to a version of 13 higher than 13.0.0 then you should raise the dependency in your package. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for an early discussion about this.
 
 #### Why a 'Umbraco.Community.* nuget package id?
 
