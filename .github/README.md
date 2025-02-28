@@ -3,7 +3,7 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Templates.PackageStarter?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter)
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](../LICENSE)
 
-Use this `dotnet new` template to get a head start for creating, releasing and maintaining Umbraco Packages for v10+.
+Use this `dotnet new` template to get a head start for creating, releasing and maintaining Umbraco Packages for v13+.
 
 I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. A lot of the other stuff involved in releasing a package and having a well-maintained open source GitHub repository has been done already.
 
