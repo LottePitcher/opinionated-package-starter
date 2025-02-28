@@ -6,28 +6,34 @@
 
 ## Using the template
 
-Open a command prompt in a location where you want your new project repository folder to be created. For example, if you are in `c:\source\` and use this template to create a project called 'MyNewProject' then the template will create the folder `c:\source\MyNewProject\`.
+Open a command prompt in a location where you want your new package repository folder to be created. For example, if you are in `c:\source\` and use this template to create a package called 'MyNewPackage' then the template will create the folder `c:\source\MyNewPackage\`.
 
-`dotnet new umbracopackagestarter -n YourProjectName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
+Before you use the template you will need to have made two decisions:
+1. The name of your package, e.g. Contentment (although that name is already taken 😉)
+2. The name that you're going to use for the GitHub repository, e.g. umbraco-contentment
+
+To run the template, open a command prompt / terminal window:
+
+`dotnet new umbracopackagestarter -n YourPackageName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
 
 Parameters:
-- `-n` or `--name` : the name of your project. This will mean that:
-   - The solution file will be: `YourProjectName.sln`
-   - A project for the package will be in a folder: `\YourProjectName`
-   - A test site for the package will be in a folder: `\YourProjectName.TestSite`
-   - The nuget package id will be set as : `Umbraco.Community.YourProjectName`
+- `-n` or `--name` : the name of your project/package. This will mean that:
+   - The solution file will be: `YourPackageName.sln`
+   - A project for the package will be in a folder: `\YourPackageName`
+   - A test site for the package will be in a folder: `\YourPackageName.TestSite`
+   - The nuget package id will be set as : `Umbraco.Community.YourPackageName`
 - `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
 - `-gr` or `--github-repo` : the GitHub repository name for the project
-- `-pt` or `--package-title` : the title of the package used in readme headings and on the Umbraco Marketplace (optional: defaults to a 'friendlier' version of the `-n` parameter)
-- `--no-restore` : if you don't want NuGet to restore any referenced nuget packages
+- `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted defaults to a 'friendlier' version of the `-n` parameter)
+- `--no-restore` : if you don't want nuget to restore any referenced nuget packages after the template has run
 
 ### Where do I put my files?
 
 Put your files in the package project:
 
 - C# files can go in the root of the project folder, or in sub-folders: that's completely up to you!
-- Script and stylesheet files must be put somewhere under `\wwwroot\YourProjectName\`. Remember to add all your script and stylesheet files to the manifest filter (`\YourProjectNameManifestFilter.cs`)
+- Script and stylesheet files must be put somewhere under `\wwwroot\YourPackageName\`. Remember to add all your script and stylesheet files to the manifest filter (`\YourPackageNameManifestFilter.cs`)
 
 ## Pushing to GitHub
 
@@ -44,9 +50,8 @@ Please note that the project has already been configured with the `umbraco-marke
 
 You can test how things should work/look before publishing as follows:
 
-- Test nuget package works by adding via local nuget command (TOD)
-   - 
-- Check how nuget will 'see' your package by using nuget Package Explorer (LINK?)
+- Test your nuget package works locally TODO
+- Check how nuget will 'see' your package by using nuget Package Explorer, visit https://github.com/NuGetPackageExplorer/NuGetPackageExplorer for installation instructions
 - Validate Marketplace configuration from https://marketplace.umbraco.com/validate and the JSON option
 
 Happy? If so, let's get this published!
@@ -56,7 +61,7 @@ Happy? If so, let's get this published!
 > Please make sure you are happy with the nuget package id before you continue. Titles, descriptions can all be changed, but you can't change the id of a nuget package once created, you can only deprecate it and start a new one.
 
 1. Update the version number
-   1. Open `src/YourProjectName/YourProjectName.csproj`
+   1. Open `src/YourPackageName/YourPackageName.csproj`
    2. Change the `<Version>...</Version>` - I use [Semantic Versioning](https://semver.org/)
 2. Add corresponding tag in Git
 3. Push to GitHub - a GitHub action should then release the new version to nuget
