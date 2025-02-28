@@ -8,14 +8,14 @@
     <Description>An Opinionated Umbraco Package Starter Template</Description>
     <PackageTags>dotnet-new;templates;umbraco</PackageTags>
 
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
-    <Copyright>2023 © Lotte Pitcher</Copyright>
+    <Copyright>2025 © Lotte Pitcher</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/LottePitcher/opinionated-package-starter</RepositoryUrl>
