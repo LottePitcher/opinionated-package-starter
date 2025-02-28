@@ -28,6 +28,10 @@ Parameters:
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted defaults to a 'friendlier' version of the `-n` parameter)
 - `--no-restore` : if you don't want nuget to restore any referenced nuget packages after the template has run
 
+After the template has run a 'post action' will initialise your git repository and add the GitHub remote url. 
+The script that it wants to run will be displayed in red: this is a security measure of dotnet templates.
+You have to say Yes (Y) for that script to run.
+
 ### Where do I put my files?
 
 Put your files in the package project:
