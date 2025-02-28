@@ -6,10 +6,6 @@
 
 ## Using the template
 
-> **Warning**  
-> 
-> This is a first version of the template. At the moment please use it from the command line. If you use this from within Visual Studio to create a new solution you will end up with two solution files - a known issue!
-
 Open a command prompt in a location where you want your new project repository folder to be created. For example, if you are in `c:\source\` and use this template to create a project called 'MyNewProject' then the template will create the folder `c:\source\MyNewProject\`.
 
 `dotnet new umbracopackagestarter -n YourProjectName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
@@ -33,17 +29,18 @@ Put your files in the package project:
 - C# files can go in the root of the project folder, or in sub-folders: that's completely up to you!
 - Script and stylesheet files must be put somewhere under `\wwwroot\YourProjectName\`. Remember to add all your script and stylesheet files to the manifest filter (`\YourProjectNameManifestFilter.cs`)
 
+## Pushing to GitHub
+
+- Create a completely empty Github repository (no readme or git ignore file) with the name you used when running the template. Up to you whether it's public or private
+- The template has already intialised the git repo and added the GitHub remote so when you're ready, do your first git commit and push 
+
 ### Logo
 
 TODO - where to put, and configure .csproj for nuget
 
-## Pushing to GitHub
-
-TODO - create git repo locally, create completely empty GitHub repo (public/private), push to GH
-
 ## Publishing to nuget / Umbraco Marketplace
 
-Please note that the project has already been configured with the `umbraco-marketplace` tag. This means that the Marketplace will automatically find and index the package once it has been uploaded to nuget.
+Please note that the project has already been configured with the `umbraco-marketplace` tag. This means that the Marketplace will automatically find and index the package once you have published it to nuget.
 
 You can test how things should work/look before publishing as follows:
 
