@@ -13,10 +13,10 @@
     <RootNamespace>Umbraco.Community.PackageStarter</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>0.1.0</Version>
-    <Authors>AuthorName</Authors>
-    <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © AuthorName</Copyright>
-    <PackageProjectUrl>https://github.com/GitHubUser/GitHubRepo</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/GitHubUser/GitHubRepo</RepositoryUrl>
+    <Authors>AUTHOR_NAME</Authors>
+    <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © AUTHOR_NAME</Copyright>
+    <PackageProjectUrl>https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY</RepositoryUrl>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

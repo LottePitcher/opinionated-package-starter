@@ -43,24 +43,36 @@
       "description": "The name of the author for the license and nuget.",
       "type": "parameter",
       "datatype": "string",
-      "replaces": "AuthorName"
+      "replaces": "AUTHOR_NAME"
     },
     "githubUser": {
       "description": "The GitHub username for the repository.",
       "type": "parameter",
       "datatype": "string",
-      "replaces": "GitHubUser"
+      "replaces": "GITHUB_USERNAME"
     },
     "githubRepo": {
       "description": "The name of the GitHub repository.",
       "type": "parameter",
       "datatype": "string",
-      "replaces": "GitHubRepo"
+      "replaces": "GITHUB_REPOSITORY"
+    },
+    "packageTitleDerived": {
+      "type": "derived",
+      "valueSource": "name",
+      "replaces": "PACKAGE_TITLE",
+      "valueTransform": "PascalCaseToSpaces"
+    },
+    "packageTitle": {
+      "description": "The title of the package, used in readme headings and on the Umbraco marketplace.",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "PACKAGE_TITLE"
     },
     "currentYear": {
       "type": "generated",
       "generator": "now",
-      "replaces": "CurrentYear",
+      "replaces": "CURRENT_YEAR",
       "parameters": {
         "format": "yyyy"
       }
@@ -83,17 +95,11 @@
       },
       "replaces": "44390"
     },
-    "friendlyPackageNameGenerated": {
-      "type": "derived",
-      "valueSource": "name",
-      "replaces": "FriendlyPackageName",
-      "valueTransform": "PascalCaseToSpaces"
-    },
-    "friendlyPackageName": {
-      "description": "The friendly name of the package.",
+    "skipRestore": {
+      "description": "If specified, skips the automatic restore of NuGet packages referenced in the solution.",
       "type": "parameter",
-      "datatype": "string",
-      "replaces": "FriendlyPackageName"
+      "datatype": "bool",
+      "defaultValue": "false"
     }
   },
   "forms": {
@@ -108,13 +114,13 @@
       "path": "src/PackageStarter/PackageStarter.csproj"
     },
     {
-      "path": "src/PackageStarter/PackageStarter.TestSite.csproj"
+      "path": "src/PackageStarter.TestSite/PackageStarter.TestSite.csproj"
     }
   ],
   "postActions": [
     {
-      "condition": "(!SkipRestore)",
-      "description": "Restore NuGet packages required by this project",
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages referenced in the solution",
       "manualInstructions": [
         {
           "text": "Run 'dotnet restore'"

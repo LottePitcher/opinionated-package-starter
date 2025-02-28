@@ -1,17 +1,25 @@
 ﻿{
   "$schema": "http://json.schemastore.org/dotnetcli.host",
   "symbolInfo": {
+    "skipRestore": {
+      "longName": "no-restore",
+      "shortName": ""
+    },
     "authorName": {
-      "longName": "authorName",
+      "longName": "author-name",
       "shortName": "an"
     },
     "githubUser": {
-      "longName": "githubUser",
+      "longName": "github-user",
       "shortName": "gu"
     },
     "githubRepo": {
-      "longName": "githubRepo",
+      "longName": "github-repo",
       "shortName": "gr"
+    },
+    "packageTitle": {
+      "longName": "package-title",
+      "shortName": "pt"
     }
   }
 }

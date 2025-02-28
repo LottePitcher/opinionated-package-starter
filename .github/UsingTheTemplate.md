@@ -12,17 +12,19 @@
 
 Open a command prompt in a location where you want your new project repository folder to be created. For example, if you are in `c:\source\` and use this template to create a project called 'MyNewProject' then the template will create the folder `c:\source\MyNewProject\`.
 
-`dotnet new umbracopackagestarter -n YourProjectName --authorName "Your Name" --githubUser "YourGitHubUsername" --githubRepo "YourGitHubRepoName"`
+`dotnet new umbracopackagestarter -n YourProjectName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
 
 Parameters:
-- `-n` : the name of your project. This will mean that:
+- `-n` or `--name` : the name of your project. This will mean that:
    - The solution file will be: `YourProjectName.sln`
    - A project for the package will be in a folder: `\YourProjectName`
    - A test site for the package will be in a folder: `\YourProjectName.TestSite`
    - The nuget package id will be set as : `Umbraco.Community.YourProjectName`
-- `-authorName` : the display name of the author, e.g. "Lotte Pitcher"
-- `-githubUser` : the username of the GitHub user/organisation that will be hosting the repository
-- `-githubRepo` : the GitHub repository name for the project
+- `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
+- `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
+- `-gr` or `--github-repo` : the GitHub repository name for the project
+- `-pt` or `--package-title` : the title of the package used in readme headings and on the Umbraco Marketplace (optional: defaults to a 'friendlier' version of the `-n` parameter)
+- `--no-restore` : if you don't want NuGet to restore any referenced nuget packages
 
 ### Where do I put my files?
 
