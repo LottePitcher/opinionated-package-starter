@@ -54,7 +54,9 @@ Please note that the project has already been configured with the `umbraco-marke
 
 You can test how things should work/look before publishing as follows:
 
-- Test your nuget package works locally TODO
+- Test your nuget package works locally by packing and explicitly setting a version number, for example:
+   - `dotnet pack --configuration Release /p:Version=1.0.0-rc001 --no-build --output`
+   - TODO: confirm how to install
 - Check how nuget will 'see' your package by using nuget Package Explorer, visit https://github.com/NuGetPackageExplorer/NuGetPackageExplorer for installation instructions
 - Validate Marketplace configuration from https://marketplace.umbraco.com/validate and the JSON option
 

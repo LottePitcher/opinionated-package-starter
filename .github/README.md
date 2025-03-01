@@ -3,7 +3,12 @@
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Templates.PackageStarter?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter)
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](../LICENSE)
 
-Use this `dotnet new` template to get a head start for creating, releasing and maintaining Umbraco Packages for v13+.
+> [!NOTE]
+> The latest version of the template (v15) is for creating packages in Umbraco 15+.
+> 
+> If you still want to create a package for Umbraco 13, [install v13 of the template](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter/13.0.0). 
+
+Use this `dotnet new` template to get a head start for creating, releasing and maintaining packages for Umbraco 15+.
 
 I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. A lot of the other stuff involved in releasing a package and having a well-maintained open source GitHub repository has been done already.
 
@@ -11,9 +16,9 @@ Of course none of these decisions are irreversible. Once you've used the templat
 
 ## Template details
 
-### What's wrong with the Umbraco Package template?
+### What's wrong with the Umbraco Extension template for Umbraco 14+?
 
-Nothing! You can [find a link to it here](https://docs.umbraco.com/umbraco-cms/extending/packages/creating-a-package#generate-an-empty-package-using-a-template). It's just that all it gives you is the actual package project. You'll need to work out how you're going to test your package, how to configure it for nuget, how you're going to release to nuget, add certain files for a well maintained repo ...
+Nothing! You can find a link to it here (TODO - ADD LINK). It's just that all it gives you is the actual package project. You'll need to set up a test site, work out how to configure it for nuget, how you're going to release to nuget, add certain files for a well maintained repo ...
 
 Whereas this template will create a folder with:
 
