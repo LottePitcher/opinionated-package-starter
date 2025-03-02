@@ -18,9 +18,9 @@ Open a command prompt in the location where you want your new package repository
 
 Parameters:
 - `-n` or `--name` : the name of your project/package. A root folder called `YourPackageName` will be created containing:
-   - A solution file called `YourPackageName.sln`
-   - A project for the package in the `\YourPackageName` folder
-   - A test site for the package in the `\YourPackageName.TestSite` folder
+   - A solution file `\src\YourPackageName.sln`
+   - A project for the package in the `\src\YourPackageName` folder
+   - A test site for the package in the `\src\YourPackageName.TestSite` folder
    - The nuget package id will be set as : `Umbraco.Community.YourPackageName`
 - `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
@@ -29,18 +29,21 @@ Parameters:
 
 The template includes running a script (setup.cmd). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
-NB the setup script includes running a npm install command: so expect this process to take a fair while!
+NB the setup script includes running a npm install command: so expect this process to take a fair while! 
+When the template has completed you'll see an "All done!" message in the command window.
 
 ## What do I do now?
 
 When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. That template also sets up an example dashboard and a Swagger document.
 
-To confirm that everything is working as expected, log in to the newly created test site:
+To confirm that everything is working as expected, run the test site (`\src\YourPackageName.TestSite`) and log in (check `appSettings.json` for login credentials):
 
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
 
 You can learn more about how the `umbraco-extension` template works, and the development workflow you should use, by watching [this section of the Umbraco 15 unboxing video](https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s)
+
+The test site has already been configured to use [uSync](https://marketplace.umbraco.com/package/usync). This means that backoffice schema (doc types etc) are serialised to disk so it's easy to collaborate with other contributors during development.
 
 ## Pushing to GitHub
 
@@ -52,7 +55,7 @@ The template setup script has already intialised your local git repo and added t
 
 The package project .csproj has already been configured to have the `umbraco-marketplace` tag on the nuget package. This means that the Marketplace will automatically find and index the package once you have published it to nuget. If you don't want that to happen then remove this tag.
 
-Before you publish your package on nuget you really should update:
+Before you publish your package on nuget you should update:
 
 - The `.csproj` in the package project and set the Title property (and check the others)
 - `\.github\README.md` - this is the readme of your open source repository on GitHub
@@ -83,7 +86,7 @@ You can test how things should work before publishing as follows:
 - Create the nuget package locally:
    - Create a local directory, e.g. c:\nuget.local
    - Add this as a nuget source: `dotnet nuget add source c:\nuget.local`
-   - Pack your package project to this location (note the use of a version number): `dotnet pack --configuration Release /p:Version=0.0.1 --output c:\nuget.local`
+   - Open a command prompt in the package project folder and pack your package to this location (note the use of a version number): `dotnet pack --configuration Release /p:Version=0.0.1 --output c:\nuget.local`
    - Spin up a new Umbraco site and install this nuget package
    - Test that the package works as expected
 
@@ -100,13 +103,15 @@ All good? Happy? If so, let's get this published!
 ### Configuring GitHub for nuget
 
 1. Login to nuget.org with the account that you want to publish the package to
-2. Use the 'API Keys' option to create a new key that is allowed to create new packages, and copy this key
+2. Use the 'API Keys' option to create a new key that is allowed to create new packages (using the 'glob' pattern of *), and copy this key
 3. In your repository on GitHub.com navigate to Settings > Secret and variables > Actions
 4. Create a new repository secret with the name `NUGET_API_KEY` and paste the key from step 2
 
 ### Publishing a release on nuget
 
 The template created a GitHub action (`\.github\workflows\release.yml`) that has been configured to publish to nuget whenever a tag is pushed to GitHub. When you first publish this package you might want to use to the version number 0.1.0 as this fits the [SemVer](https://semver.org/) scheme.
+
+The version number also needs to be set in `src\YourPackageName\Client\public\umbraco-package.json`. Then open a command prompt in the `Client` folder and `npm run build`.
 
 So when you're ready to publish, add a new tag with the name of the version you want to use (e.g. `0.1.0`) to the latest commit in git and push that tag to GitHub. The GitHub action will then run and, hopefully!, successfuly publish the release on GitHub. Click on the Actions tab of your GitHub repository to monitor its progress.
 
@@ -130,5 +135,7 @@ If you don't want to wait... check instructions for forcing marketplace to updat
 
 ## Publishing new versions of the package
 
-- Add a git tag with the next version number and push to GitHub
+- The next version number needs to be set in `src\YourPackageName\Client\public\umbraco-package.json`
+- Open a command prompt in the `Client` folder and `npm run build`, commit and push to GitHub
+- Add a git tag with the new version number and push to GitHub
 - When the action has completed, create new release notes for the version on GitHub 
