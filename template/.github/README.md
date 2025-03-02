@@ -16,7 +16,7 @@ If you put images into /docs/screenshots, then you would reference them in this 
 
 ## Installation
 
-Add the package to an existing Umbraco website (v13+) from nuget:
+Add the package to an existing Umbraco website (v15+) from nuget:
 
 `dotnet add package Umbraco.Community.PackageStarter`
 

@@ -35,9 +35,8 @@
   ],
   "guids": [
     "BAD983C8-B7F9-4F1D-B54E-E560A65B44CF",
-    "C2EA4B1C-4FCB-4AA4-A80B-EB446FFF450D",
-    "EE4D10A0-BF63-41FD-925B-0560F90AD4F8",
-    "1BBD3E7B-51EA-450E-99EA-CEC52C18A1F9"
+    "170E378E-7301-445B-ABBE-8FB85619A977",
+    "2e8420d6-c69d-4139-9845-e155e71e6b19"
   ],
   "symbols": {
     "authorName": {
@@ -86,7 +85,7 @@
       "parameters": {
         "fallback": 5000
       },
-      "replaces": "43339"
+      "replaces": "40000"
     },
     "httpsPort": {
       "type": "generated",
@@ -96,13 +95,7 @@
         "high": 44399,
         "fallback": 5001
       },
-      "replaces": "44390"
-    },
-    "skipRestore": {
-      "description": "If specified, skips the automatic restore of NuGet packages referenced in the solution.",
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false"
+      "replaces": "44300"
     }
   },
   "forms": {
@@ -122,19 +115,20 @@
   ],
   "postActions": [
     {
-      "description": "Initialise git repository and set remote url",
+      "description": "Setups the project by calling 'setup.cmd'",
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "manualInstructions": [
-        { "text": "CMD > git init\ngit branch -M main\ngit remote add origin https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY.git" }
+        { "text": "Run 'setup.cmd'" }
       ],
       "args": {
-        "executable": "powershell",
-        "args": "git init;git branch -M main;git remote add origin https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY.git"
+        "executable": "setup.cmd",
+        "args": "",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
       },
-      "applyFileRenamesToArgs": ["args" ]
+      "continueOnError": false
     },
     {
-      "condition": "(!skipRestore)",
       "description": "Restore NuGet packages referenced in the solution",
       "manualInstructions": [
         {
@@ -142,6 +136,14 @@
         }
       ],
       "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+      "description": "All done!",
+      "manualInstructions": [{
+        "text": "Read more about the development workflow for your Umbraco package at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
+      }],
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
       "continueOnError": true
     }
   ]

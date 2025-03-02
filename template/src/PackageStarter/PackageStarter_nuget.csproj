@@ -1,18 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <StaticWebAssetBasePath>App_Plugins</StaticWebAssetBasePath>
-    <ContentTargetFolders>.</ContentTargetFolders>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Product>Umbraco.Community.PackageStarter</Product>
     <PackageId>Umbraco.Community.PackageStarter</PackageId>
-    <Title>PackageStarter</Title>
+    <Title>PACKAGE_TITLE</Title>
     <Description>...</Description>
     <PackageTags>umbraco;umbraco-marketplace</PackageTags>
-    <RootNamespace>Umbraco.Community.PackageStarter</RootNamespace>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
     <Authors>AUTHOR_NAME</Authors>
     <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © AUTHOR_NAME</Copyright>
     <PackageProjectUrl>https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY</PackageProjectUrl>
@@ -20,13 +19,24 @@
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon></PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="13.0.0" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Api.Common" Version="*" />
+    <PackageReference Include="Umbraco.Cms.Api.Management" Version="*" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <!-- Dont include the client folder as part of packaging nuget build -->
+    <Content Remove="Client\**" />
 
+    <!-- However make the Umbraco-package.json included for dotnet pack or nuget package and visible to the solution -->
+    <None Include="Client\public\umbraco-package.json" Pack="false" />
+  </ItemGroup>
+  
   <ItemGroup>
     <None Include="..\..\docs\README_nuget.md">
       <Pack>True</Pack>

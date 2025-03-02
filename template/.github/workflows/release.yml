@@ -20,10 +20,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 6.0.x
-  
-    - name: Build project
-      run: dotnet build src\PackageStarter\PackageStarter.csproj --configuration Release
+        dotnet-version: 9.0.x
+
+    - name: Build & Pack
+      run: dotnet pack src\PackageStarter\PackageStarter.csproj -c Release /p:Version=${{github.ref_name}}
 
     - name: Push to NuGet
-      run: dotnet nuget push **\*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push **\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
