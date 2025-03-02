@@ -19,6 +19,7 @@
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon></PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>

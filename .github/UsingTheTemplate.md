@@ -4,13 +4,14 @@
 
 `dotnet new install Umbraco.Community.Templates.PackageStarter`
 
-## Using the template
+## Running the template
 
 Open a command prompt in a location where you want your new package repository folder to be created. For example, if you are in `c:\source\` and use this template to create a package called 'MyNewPackage' then the template will create the folder `c:\source\MyNewPackage\`.
 
-Before you use the template you will need to have made two decisions:
+Before you use the template you need to know two things:
 1. The name of your package, e.g. Contentment (although that name is already taken 😉)
-2. The name that you're going to use for the GitHub repository, e.g. umbraco-contentment
+2. The name of the GitHub organisation you're using to host the repo (usually your own username, perhaps your company's)
+3. The name you're going to use for the GitHub repository, e.g. umbraco-contentment
 
 To run the template, open a command prompt / terminal window:
 
@@ -25,19 +26,21 @@ Parameters:
 - `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
 - `-gr` or `--github-repo` : the GitHub repository name for the project
-- `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted defaults to a 'friendlier' version of the `-n` parameter)
-- `--no-restore` : if you don't want nuget to restore any referenced nuget packages after the template has run
+- `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
 
-After the template has run a 'post action' will initialise your git repository and add the GitHub remote url. 
-The script that it wants to run will be displayed in red: this is a security measure of dotnet templates.
-You have to say Yes (Y) for that script to run.
+The template needs to run a setup script. For security reasons, dotnet templates will prompt for confirmation first.
+You can add `allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
-### Where do I put my files?
+### What do I do now?
 
-Put your files in the package project:
+When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. It also setup an example dashboard and a Swagger document.
 
-- C# files can go in the root of the project folder, or in sub-folders: that's completely up to you!
-- Script and stylesheet files must be put somewhere under `\wwwroot\YourPackageName\`. Remember to add all your script and stylesheet files to the manifest filter (`\YourPackageNameManifestFilter.cs`)
+Log in to the test site in your solution and confirm that things are working:
+- In the Content section, there should be an "Example Dashboard" with some demo functionality
+- Navigate to /umbraco/swagger and change the document dropdown (top right) - there should be a document already created for your package
+
+You can learn more about how the `umbraco-extension` template works by watching [this section of the Umbraco 15 unboxing video](
+https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s)
 
 ## Pushing to GitHub
 
@@ -46,7 +49,22 @@ Put your files in the package project:
 
 ### Logo
 
-TODO - where to put, and configure .csproj for nuget
+Both nuget, and the Umbraco marketplace displays the logo for your package. If you need some inspiration, check out [The Noun Project](https://thenounproject.com/icons/).
+
+If you save your logo as `\docs\logo.png` in your repository, then you would need to update the package project .csproj as follows:
+
+Change `<PackageIcon></PackageIcon>` to `<PackageIcon>logo.png</PackageIcon>`
+
+And add this section:
+
+```
+  <ItemGroup>
+    <None Include="..\..\docs\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+```
 
 ## Publishing to nuget / Umbraco Marketplace
 
@@ -54,17 +72,24 @@ Please note that the project has already been configured with the `umbraco-marke
 
 You can test how things should work/look before publishing as follows:
 
-- Test your nuget package works locally by packing and explicitly setting a version number, for example:
-   - `dotnet pack --configuration Release /p:Version=1.0.0-rc001 --no-build --output`
-   - TODO: confirm how to install
-- Check how nuget will 'see' your package by using nuget Package Explorer, visit https://github.com/NuGetPackageExplorer/NuGetPackageExplorer for installation instructions
+- Create the nuget package locally:
+   - Create a local directory, e.g. c:\nuget.local
+   - Add this as a nuget source: `dotnet nuget add source c:\nuget.local`
+   - Pack your package project to this location (note the use of a version number): `dotnet pack --configuration Release /p:Version=0.0.1 --output c:\nuget.local`
+   - Spin up a new Umbraco site and install this nuget package
+   - Test that the package works as expected
+
+- Check how your package will look on nuget using the [nuget Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
+
 - Validate Marketplace configuration from https://marketplace.umbraco.com/validate and the JSON option
 
-Happy? If so, let's get this published!
+All good? Happy? If so, let's get this published!
 
 > **Warning**
 > 
 > Please make sure you are happy with the nuget package id before you continue. Titles, descriptions can all be changed, but you can't change the id of a nuget package once created, you can only deprecate it and start a new one.
+
+The project is created with version 0.1.0 as this fits the [SemVer](https://semver.org/) scheme. The version number is set in the .csproj of the package project.
 
 1. Update the version number
    1. Open `src/YourPackageName/YourPackageName.csproj`
