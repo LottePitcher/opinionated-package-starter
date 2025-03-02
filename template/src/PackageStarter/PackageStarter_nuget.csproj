@@ -9,7 +9,7 @@
   <PropertyGroup>
     <Product>Umbraco.Community.PackageStarter</Product>
     <PackageId>Umbraco.Community.PackageStarter</PackageId>
-    <Title>PackageStarter</Title>
+    <Title>PACKAGE_TITLE</Title>
     <Description>...</Description>
     <PackageTags>umbraco;umbraco-marketplace</PackageTags>
     <Authors>AUTHOR_NAME</Authors>
