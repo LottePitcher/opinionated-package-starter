@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](../LICENSE)
 
 > [!NOTE]
-> The current version of this template is for creating packages in Umbraco 15+. If you still want to create a package for Umbraco 13, [install v13](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter/13.0.0) of the template and read the instructions in the [v13/dev](https://github.com/LottePitcher/opinionated-package-starter/tree/v13/dev) branch.
+> The current version of this template is for creating packages in Umbraco 15+. If you still want to create a package for Umbraco 13, [install v13](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter/13.0.1) of the template and read the instructions in the [v13/dev](https://github.com/LottePitcher/opinionated-package-starter/tree/v13/dev) branch.
 
 Use this `dotnet new` template to get a head start on creating, releasing and maintaining packages for Umbraco 15+.
 
