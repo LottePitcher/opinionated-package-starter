@@ -12,10 +12,15 @@ dotnet new install Umbraco.Templates --force
 
 :: use the umbraco-extension dotnet template to add the package project
 cd src
-dotnet new umbraco-extension -n "PackageStarter" --site-domain "https://localhost:44300" --include-example --allow-scripts Yes
+dotnet new umbraco-extension -n "PackageStarter" --site-domain "https://localhost:44300" --include-example --allow-scripts No
+
+:: run the commands in the powershell script we said no to...
+cd PackageStarter/Client
+npm install
+npm run build
 
 :: replace package .csproj with the one from the template so has nuget info
-cd PackageStarter
+cd ..
 del PackageStarter.csproj
 ren PackageStarter_nuget.csproj PackageStarter.csproj
 
