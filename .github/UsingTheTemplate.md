@@ -36,7 +36,7 @@ When the template has completed you'll see an "All done!" message in the command
 
 When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. That template also sets up an example dashboard and a Swagger document.
 
-To confirm that everything is working as expected, run the test site (`\src\YourPackageName.TestSite`) and log in (check `appSettings.json` for login credentials):
+To confirm that everything is working as expected, run the test site (`\src\YourPackageName.TestSite`) and log in (check `appsettings.json` for login credentials):
 
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
@@ -60,6 +60,7 @@ Before you publish your package on nuget you should update:
 - The `.csproj` in the package project and set the Title property (and check the others)
 - `\.github\README.md` - this is the readme of your open source repository on GitHub
 - `.\docs\README_nuget.md` - this is the readme that will show on nuget.org
+- The `umbraco-marketplace.json` file in the root of your repository and add the `Category` property (see the [supported categories](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package#categories) for more information)
 
 ### Package logo
 
