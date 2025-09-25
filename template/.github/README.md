@@ -12,6 +12,8 @@ Including screenshots is a really good idea!
 If you put images into /docs/screenshots, then you would reference them in this readme as, for example:
 
 <img alt="..." src="https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY/blob/develop/docs/screenshots/screenshot.png">
+
+And don't forget to add the screenshot files to umbraco-marketplace.json too!
 -->
 
 ## Installation
