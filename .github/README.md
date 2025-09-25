@@ -6,6 +6,20 @@
 > [!NOTE]
 > The current version of this template is for creating packages in Umbraco 16. If you want to create a package for an earlier version of Umbraco, [install the earlier version](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter#versions-body-tab) of the template. Instructions for version 13 are in the [v13/dev](https://github.com/LottePitcher/opinionated-package-starter/tree/v13/dev) branch.
 
+## Using the template
+
+Run the following command to install the template:
+
+`dotnet new install Umbraco.Community.Templates.PackageStarter`
+
+Open a command prompt in the location where you want your new package repository folder to be created:
+
+`dotnet new umbracopackagestarter -n YourPackageName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
+
+More information on this can be found in the [instructions](UsingTheTemplate.md).
+
+## Getting started
+
 Use this `dotnet new` template to get a head start on creating, releasing and maintaining packages for Umbraco 16.
 
 I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. A lot of the other stuff involved in developing, releasing and maintaining an open source Umbraco package has been done already.
