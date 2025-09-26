@@ -11,6 +11,7 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "launchUrl": "https://localhost:44300/umbraco",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -19,11 +20,12 @@
     "Umbraco.Web.UI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
+      "launchUrl": "https://localhost:44300/umbraco",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:44300;http://localhost:40000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }      
+      }
     }
   }
 }
