@@ -16,6 +16,8 @@ Open a command prompt in the location where you want your new package repository
 
 `dotnet new umbracopackagestarter -n YourPackageName -an "Your Name" -gu "YourGitHubUsername" -gr "YourGitHubRepoName"`
 
+Note: the GitHub repository doesn't have to exist yet, you can create it once you're ready to push to GitHub.
+
 Parameters:
 - `-n` or `--name` : the name of your project/package. A root folder called `YourPackageName` will be created containing:
    - A solution file `\src\YourPackageName.sln`
@@ -36,8 +38,10 @@ When the template has completed you'll see an "All done!" message in the command
 
 When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. That template also sets up an example dashboard and a Swagger document.
 
-To confirm that everything is working as expected, run the test site (`\src\YourPackageName.TestSite`) and log in (check `appSettings.json` for login credentials):
+Now you can do a build of the frontend project and run the test site:
 
+- In `src/YourPackageName/Client` you can run the following npm commands: `npm i && npm run build`
+- Once that is done, in `src/YourPackageName.TestSite/` you can run the site with `dotnet run` and log in (check `appSettings.json` for login credentials):
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
 
