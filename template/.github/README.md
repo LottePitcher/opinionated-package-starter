@@ -18,7 +18,7 @@ And don't forget to add the screenshot files to umbraco-marketplace.json too!
 
 ## Installation
 
-Add the package to an existing Umbraco website (v15+) from nuget:
+Add the package to an existing Umbraco website (v17+) from nuget:
 
 `dotnet add package Umbraco.Community.PackageStarter`
 

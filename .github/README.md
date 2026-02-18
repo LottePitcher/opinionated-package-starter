@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/LottePitcher/opinionated-package-starter?color=8AB803)](../LICENSE)
 
 > [!NOTE]
-> The current version of this template is for creating packages in Umbraco 16. If you want to create a package for an earlier version of Umbraco, [install the earlier version](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter#versions-body-tab) of the template. Instructions for version 13 are in the [v13/dev](https://github.com/LottePitcher/opinionated-package-starter/tree/v13/dev) branch.
+> The current version of this template is for creating packages in Umbraco 17. If you want to create a package for an earlier version of Umbraco, [install the earlier version](https://www.nuget.org/packages/Umbraco.Community.Templates.PackageStarter#versions-body-tab) of the template. Instructions for version 13 are in the [v13/dev](https://github.com/LottePitcher/opinionated-package-starter/tree/v13/dev) branch.
 
 ## Using the template
 
@@ -20,7 +20,7 @@ More information on this can be found in the [instructions](UsingTheTemplate.md)
 
 ## Getting started
 
-Use this `dotnet new` template to get a head start on creating, releasing and maintaining packages for Umbraco 16.
+Use this `dotnet new` template to get a head start on creating, releasing and maintaining packages for Umbraco 17.
 
 I've called it an 'opinionated' package starter template because lots of decisions have been made for you. This means that all you *really* have to worry about is adding your package code. A lot of the other stuff involved in developing, releasing and maintaining an open source Umbraco package has been done already.
 
@@ -51,16 +51,16 @@ Whereas this template will create a folder with:
 ### What key decisions have been made?
 
 - License: MIT
-- Umbraco version: v16.0.0 (the current major at the time of release)
+- Umbraco version: v17.0.0 (the current major at the time of release)
 - nuget package Id: `Umbraco.Community.YourPackageName`
 
 #### Why MIT license?
 
 Because Umbraco CMS is released with an MIT license, and I've assumed you're releasing this as an open source package too.
 
-#### Why are you targeting the latest version of Umbraco 16?
+#### Why are you targeting the latest version of Umbraco 17?
 
-If sites are on a Standard Term Support (STS) version of Umbraco, i.e. version 14+, then I believe they should be kept up to date with the latest STS version, so your package doesn't need to support earlier versions. When Umbraco 17 is released (scheduled for November 2025), this template will be updated to use that Long Term Support release. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for discussions about what versions to support.
+Umbraco 17 is the current Long Term Support (LTS) release. I believe packages should target the latest LTS version so that sites can stay up to date. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for discussions about what versions to support.
 
 #### Why a 'Umbraco.Community.* nuget package id?
 
