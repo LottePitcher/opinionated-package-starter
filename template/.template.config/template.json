@@ -141,7 +141,7 @@
     {
       "description": "All done!",
       "manualInstructions": [{
-        "text": "Read more about the development workflow for your Umbraco package at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
+        "text": "Learn more about the development workflow for your Umbraco package/extension project at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
       }],
       "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
       "continueOnError": true

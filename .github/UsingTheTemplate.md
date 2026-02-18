@@ -29,7 +29,7 @@ Parameters:
 - `-gr` or `--github-repo` : the GitHub repository name for the project
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
 
-The template includes running a script (setup.cmd). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `allow-scripts yes` to the dotnet command to avoid seeing that prompt.
+The template includes running a script (setup.cmd). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
 NB the setup script includes running a npm install command: so expect this process to take a fair while! 
 When the template has completed you'll see an "All done!" message in the command window.
@@ -38,7 +38,7 @@ When the template has completed you'll see an "All done!" message in the command
 
 When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. That template also sets up an example dashboard and a Swagger document.
 
-Now you can do a build of the frontend project and run the test site:
+Now you should build the frontend project and run the test site:
 
 - In `src/YourPackageName/Client` run the following npm commands:
   - `npm i`
@@ -47,7 +47,7 @@ Now you can do a build of the frontend project and run the test site:
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
 
-You can learn more about how the `umbraco-extension` template works, and the development workflow you should use, by watching [this section of the Umbraco 15 unboxing video](https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s)
+You can learn more about how the `umbraco-extension` template works, and the development workflow you should use, by watching [this section](https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s) of the Umbraco 15 unboxing video.
 
 The test site has already been configured to use [uSync](https://marketplace.umbraco.com/package/usync). This means that backoffice schema (doc types etc) are serialised to disk so it's easy to collaborate with other contributors during development.
 
@@ -66,7 +66,7 @@ Before you publish your package on nuget you should update:
 - The `.csproj` in the package project and set the Title property (and check the others)
 - `\.github\README.md` - this is the readme of your open source repository on GitHub
 - `.\docs\README_nuget.md` - this is the readme that will show on nuget.org
-- The `umbraco-marketplace.json` file in the root of your repository and add the `Category` property (see the [supported categories](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package#categories) for more information)
+- The `umbraco-marketplace.json` file in the root of your repository and update the `Category` property (see the [supported categories](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package#categories) for more information)
 
 ### Package logo
 

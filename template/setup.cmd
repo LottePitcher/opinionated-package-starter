@@ -14,7 +14,7 @@ dotnet new install Umbraco.Templates --force
 cd src
 dotnet new umbraco-extension -n "PackageStarter" --site-domain "https://localhost:44300" --include-example
 
-:: replace package .csproj with the one from the template so has nuget info
+:: replace package .csproj with the one from the template so has the extra information needed for publishing to nuget
 cd PackageStarter
 del PackageStarter.csproj
 ren PackageStarter_nuget.csproj PackageStarter.csproj

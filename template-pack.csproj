@@ -15,7 +15,7 @@
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
-    <Copyright>2025 © Lotte Pitcher</Copyright>
+    <Copyright>2026 © Lotte Pitcher</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/LottePitcher/opinionated-package-starter</RepositoryUrl>

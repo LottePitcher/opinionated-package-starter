@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Project Is
 
-This is a `dotnet new` template that generates an opinionated starter solution for Umbraco v16 packages. It is **not** a typical application — it's a template packaging project. The generated output includes a package project, a test site, GitHub Actions, issue templates, and NuGet configuration.
+This is a `dotnet new` template that generates an opinionated starter solution for Umbraco v17 packages. It is **not** a typical application — it's a template packaging project. The generated output includes a package project, a test site, GitHub Actions, issue templates, and NuGet configuration.
 
 Package ID: `Umbraco.Community.Templates.PackageStarter`
 Template short name: `umbracopackagestarter`
