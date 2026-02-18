@@ -40,7 +40,9 @@ When the opinionated package starter template created your package solution, it 
 
 Now you can do a build of the frontend project and run the test site:
 
-- In `src/YourPackageName/Client` you can run the following npm commands: `npm i && npm run build`
+- In `src/YourPackageName/Client` run the following npm commands:
+  - `npm i`
+  - `npm run build`
 - Once that is done, in `src/YourPackageName.TestSite/` you can run the site with `dotnet run` and log in (check `appsettings.json` for login credentials):
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
