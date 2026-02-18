@@ -16,7 +16,7 @@ To work on this template:
 
 3. Install the template from your local directory, e.g. 
 
-`dotnet new install c:\source\opinionated-package-starter\template`
+`dotnet new install c:\source\opinionated-package-starter\template` or navigate to the `template` folder and `dotnet new install .\` 
 
 Please note that:
 
@@ -24,4 +24,4 @@ Please note that:
 
 `dotnet new uninstall c:\source\opinionated-package-starter\template`
 
-- If you are changing the template you do not need to uninstall and reinstall each time UNLESS you are changing the parameters (symbols) in `\template\template.config/template.json`.
+- If you are changing the template you do not need to uninstall and reinstall each time UNLESS you are changing the parameters (symbols) in `\template\template.config\template.json`.
