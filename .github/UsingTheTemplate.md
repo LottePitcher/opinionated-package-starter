@@ -41,7 +41,7 @@ When the opinionated package starter template created your package solution, it 
 Now you can do a build of the frontend project and run the test site:
 
 - In `src/YourPackageName/Client` you can run the following npm commands: `npm i && npm run build`
-- Once that is done, in `src/YourPackageName.TestSite/` you can run the site with `dotnet run` and log in (check `appSettings.json` for login credentials):
+- Once that is done, in `src/YourPackageName.TestSite/` you can run the site with `dotnet run` and log in (check `appsettings.json` for login credentials):
 - In the Content section, there should be an "Example Dashboard" with some demo functionality
 - Navigate to /umbraco/swagger and change the document dropdown (top right): there should be a document already created for your package
 
@@ -64,6 +64,7 @@ Before you publish your package on nuget you should update:
 - The `.csproj` in the package project and set the Title property (and check the others)
 - `\.github\README.md` - this is the readme of your open source repository on GitHub
 - `.\docs\README_nuget.md` - this is the readme that will show on nuget.org
+- The `umbraco-marketplace.json` file in the root of your repository and add the `Category` property (see the [supported categories](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package#categories) for more information)
 
 ### Package logo
 
