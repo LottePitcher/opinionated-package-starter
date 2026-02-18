@@ -38,7 +38,7 @@ When the template has completed you'll see an "All done!" message in the command
 
 When the opinionated package starter template created your package solution, it used the `umbraco-extension` core dotnet template to create the package project with tooling for Vite, TypeScript etc. That template also sets up an example dashboard and a Swagger document.
 
-Now you should build of the frontend project and run the test site:
+Now you should build the frontend project and run the test site:
 
 - In `src/YourPackageName/Client` run the following npm commands:
   - `npm i`
