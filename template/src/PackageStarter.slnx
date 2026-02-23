@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../.github/CONTRIBUTING.md" />
+    <File Path="../.github/README.md" />
+    <File Path="../docs/README_nuget.md" />
+    <File Path="../umbraco-marketplace.json" />
+  </Folder>
+  <Project Path="PackageStarter.TestSite/PackageStarter.TestSite.csproj" />
+</Solution>
