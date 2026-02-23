@@ -16,11 +16,11 @@ dotnet new umbraco-extension -n "PackageStarter" --site-domain "https://localhos
 
 # replace package .csproj with the one from the template so has the extra information needed for publishing to nuget
 cd PackageStarter
-del PackageStarter.csproj
-ren PackageStarter_nuget.csproj PackageStarter.csproj
+rm PackageStarter.csproj
+mv PackageStarter_nuget.csproj PackageStarter.csproj
 
 # add project to solution
-cd..
+cd ..
 dotnet sln add "PackageStarter"
 
 # add reference to project from test site
