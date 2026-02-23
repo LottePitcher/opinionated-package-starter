@@ -101,7 +101,7 @@
     },
     "isUnix": {
       "type": "computed",
-      "value": "(OS != \"Windows_NT\")"
+      "value": "(!isWindows)"
     }
   },
   "forms": {
