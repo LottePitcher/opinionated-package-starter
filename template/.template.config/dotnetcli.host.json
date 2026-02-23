@@ -16,6 +16,10 @@
     "packageTitle": {
       "longName": "package-title",
       "shortName": "pt"
+    },
+    "useDefaultPackagePrefix": {
+      "longName": "use-default-package-prefix",
+      "shortName": "udp"
     }
   }
 }

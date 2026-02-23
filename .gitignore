@@ -356,4 +356,4 @@ MigrationBackup/
 src/.idea
 
 # Testing package
-testing/
+test/

@@ -69,6 +69,29 @@
       "datatype": "string",
       "replaces": "PACKAGE_TITLE"
     },
+    "useDefaultPackagePrefix": {
+      "description": "Whether to use the default 'Umbraco.Community' prefix for the package id or just the template name as is.",
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "packagePrefixGen": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "PACKAGE_PREFIX",
+      "parameters": {
+        "cases": [
+          {
+            "condition": "(useDefaultPrefix)",
+            "value": "Umbraco.Community."
+          },
+          {
+            "condition": "(!useDefaultPrefix)",
+            "value": ""
+          }
+        ]
+      }
+    },
     "currentYear": {
       "type": "generated",
       "generator": "now",
@@ -125,7 +148,9 @@
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "condition": "(isWindows)",
       "manualInstructions": [
-        { "text": "Run 'setup.cmd'" }
+        {
+          "text": "Run 'setup.cmd'"
+        }
       ],
       "args": {
         "executable": "setup.cmd",
@@ -140,7 +165,9 @@
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "condition": "(isUnix)",
       "manualInstructions": [
-        { "text": "Run 'setup.sh'" }
+        {
+          "text": "Run 'setup.sh'"
+        }
       ],
       "args": {
         "executable": "/bin/sh",
@@ -162,9 +189,11 @@
     },
     {
       "description": "All done!",
-      "manualInstructions": [{
-        "text": "Learn more about the development workflow for your Umbraco package/extension project at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
-      }],
+      "manualInstructions": [
+        {
+          "text": "Learn more about the development workflow for your Umbraco package/extension project at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
+        }
+      ],
       "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
       "continueOnError": true
     }
