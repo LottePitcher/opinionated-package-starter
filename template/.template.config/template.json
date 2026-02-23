@@ -96,6 +96,14 @@
         "fallback": 5001
       },
       "replaces": "44300"
+    },
+    "isWindows": {
+      "type": "computed",
+      "value": "(OS == \"Windows_NT\")"
+    },
+    "isUnix": {
+      "type": "computed",
+      "value": "(OS != \"Windows_NT\")"
     }
   },
   "forms": {
@@ -117,12 +125,28 @@
     {
       "description": "Setups the project by calling 'setup.cmd'",
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isWindows)",
       "manualInstructions": [
         { "text": "Run 'setup.cmd'" }
       ],
       "args": {
         "executable": "setup.cmd",
         "args": "",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
+      },
+      "continueOnError": false
+    },
+    {
+      "description": "Setups the project by calling 'setup.sh'",
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isUnix)",
+      "manualInstructions": [
+        { "text": "Run 'setup.sh'" }
+      ],
+      "args": {
+        "executable": "/bin/sh",
+        "args": "setup.sh",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
