@@ -31,7 +31,7 @@ Parameters:
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
 - `-udp` or `--use-default-package-prefix` : whether the package should set the nuget package ID to be prefixed with `Umbraco.Community` or not
 
-The template includes running a script (setup.cmd). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
+The template includes running a script (`setup.cmd` / `setup.sh`). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
 NB the setup script includes running a npm install command: so expect this process to take a fair while! 
 When the template has completed you'll see an "All done!" message in the command window.
