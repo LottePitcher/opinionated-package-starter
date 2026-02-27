@@ -355,5 +355,9 @@ MigrationBackup/
 # Rider
 src/.idea
 
-# Testing package
+# Common teplate testing directories
 test/
+testing/
+
+# MacOS
+.DS_Store
