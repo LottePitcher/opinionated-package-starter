@@ -24,7 +24,7 @@ Parameters:
    - A project for the package in the `\src\YourPackageName` folder
    - A test site for the package in the `\src\YourPackageName.TestSite` folder
    - The nuget package id will be set as : `Umbraco.Community.YourPackageName` (unless you set `-udp` -> false, see `-udp` parameter below)
-     - Useful if you want your package to be `Org.Contoso.YourPackageName` and for the nuget package to also be like this instead of `Umbraco.Community.Org.Contose.YourPackageName`
+     - Useful if you want your package to be `Org.Contoso.YourPackageName` and for the nuget package to also be like this instead of `Umbraco.Community.Org.Contoso.YourPackageName`
 - `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
 - `-gr` or `--github-repo` : the GitHub repository name for the project
