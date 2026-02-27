@@ -82,11 +82,11 @@
       "parameters": {
         "cases": [
           {
-            "condition": "(useDefaultPrefix)",
+            "condition": "(useDefaultPackagePrefix)",
             "value": "Umbraco.Community."
           },
           {
-            "condition": "(!useDefaultPrefix)",
+            "condition": "(!useDefaultPackagePrefix)",
             "value": ""
           }
         ]
@@ -163,15 +163,15 @@
     {
       "description": "Cleanup the setup scripts",
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "condition": "(isUnix)",
+      "condition": "(isWindows)",
       "manualInstructions": [
         {
-          "text": "Run 'del setup.sh && del setup.cmd'"
+          "text": "Run 'del setup.sh setup.cmd'"
         }
       ],
       "args": {
-        "executable": "cmd.exe",
-        "args": "del setup.sh && del setup.cmd",
+        "executable": "del",
+        "args": "setup.sh setup.cmd",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
@@ -187,7 +187,7 @@
         }
       ],
       "args": {
-        "executable": "/bin/sh",
+        "executable": "sh",
         "args": "setup.sh",
         "redirectStandardOutput": false,
         "redirectStandardError": false
@@ -200,12 +200,12 @@
       "condition": "(isUnix)",
       "manualInstructions": [
         {
-          "text": "Run 'rm setup.sh && rm setup.cmd'"
+          "text": "Run 'rm setup.sh setup.cmd'"
         }
       ],
       "args": {
-        "executable": "/bin/sh",
-        "args": "rm setup.sh && rm setup.cmd",
+        "executable": "rm",
+        "args": "setup.sh setup.cmd",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
