@@ -27,13 +27,9 @@ Parameters:
 - `-gr` or `--github-repo` : the GitHub repository name for the project
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
 
-The template includes running a script (`setup.mjs`) which handles git initialisation, scaffolding the package project, and wiring up the solution. For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
+The template includes running a script (`setup.cmd`) which handles git initialisation, scaffolding the package project, and wiring up the solution. For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
-If the post-creation script fails for any reason, you can run it manually from your new package folder:
-
-```bash
-node setup.mjs
-```
+> **Linux/macOS users:** `setup.cmd` is Windows-only and will fail on other platforms. The template also includes `setup.mjs` — a cross-platform Node.js alternative that does the same thing. If the post-creation script fails, run `node setup.mjs` from your new package folder instead.
 
 NB the setup script includes running a npm install command: so expect this process to take a fair while! 
 When the template has completed you'll see an "All done!" message in the command window.
