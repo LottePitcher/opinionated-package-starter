@@ -1,6 +1,7 @@
 @ECHO OFF
 :: This file can now be deleted!
 :: It was used when setting up the package solution (using https://github.com/LottePitcher/opinionated-package-starter)
+:: On Linux/macOS, run the cross-platform alternative instead: node setup.mjs
 
 :: set up git
 git init
