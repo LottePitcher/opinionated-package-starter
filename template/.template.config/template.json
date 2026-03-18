@@ -115,14 +115,14 @@
   ],
   "postActions": [
     {
-      "description": "Setups the project by calling 'setup.cmd'",
+      "description": "Sets up the project by running 'setup.mjs'",
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "manualInstructions": [
-        { "text": "Run 'setup.cmd'" }
+        { "text": "Run 'node setup.mjs'" }
       ],
       "args": {
-        "executable": "setup.cmd",
-        "args": "",
+        "executable": "node",
+        "args": "setup.mjs",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
