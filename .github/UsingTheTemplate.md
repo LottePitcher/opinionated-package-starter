@@ -20,7 +20,7 @@ Note: the GitHub repository doesn't have to exist yet, you can create it once yo
 
 Parameters:
 - `-n` or `--name` : the name of your project/package. A root folder called `YourPackageName` will be created containing:
-   - A solution file `\src\YourPackageName.sln`
+   - A solution file `\src\YourPackageName.slnx`
    - A project for the package in the `\src\YourPackageName` folder
    - A test site for the package in the `\src\YourPackageName.TestSite` folder
    - The nuget package id will be set as `Umbraco.Community.YourPackageName` (customisable with `-pp`, see below)

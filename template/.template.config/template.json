@@ -166,12 +166,12 @@
         }
       ],
       "args": {
-        "executable": "del",
-        "args": "setup.sh setup.cmd",
+        "executable": "cmd",
+        "args": "/c del setup.sh setup.cmd",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
-      "continueOnError": false
+      "continueOnError": true
     },
     {
       "description": "Setups the project by calling 'setup.sh'",
@@ -205,7 +205,7 @@
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
-      "continueOnError": false
+      "continueOnError": true
     },
     {
       "description": "Restore NuGet packages referenced in the solution",
