@@ -69,27 +69,23 @@
       "datatype": "string",
       "replaces": "PACKAGE_TITLE"
     },
-    "useDefaultPackagePrefix": {
-      "description": "Whether to use the default 'Umbraco.Community' prefix for the package id or just the template name as is.",
+    "packagePrefix": {
+      "description": "The prefix for the NuGet package ID. The package ID will be '{prefix}.YourPackageName'.",
       "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "true"
+      "datatype": "string",
+      "defaultValue": "Umbraco.Community"
     },
-    "packagePrefixGen": {
+    "nugetPackageId": {
       "type": "generated",
-      "generator": "switch",
-      "replaces": "PACKAGE_PREFIX",
+      "generator": "join",
+      "replaces": "NUGET_PACKAGE_ID",
       "parameters": {
-        "cases": [
-          {
-            "condition": "(useDefaultPackagePrefix)",
-            "value": "Umbraco.Community."
-          },
-          {
-            "condition": "(!useDefaultPackagePrefix)",
-            "value": ""
-          }
-        ]
+        "symbols": [
+          { "type": "ref", "value": "packagePrefix" },
+          { "type": "ref", "value": "name" }
+        ],
+        "separator": ".",
+        "removeEmptyValues": true
       }
     },
     "currentYear": {

@@ -17,8 +17,9 @@ body:
   id: "description"
   attributes:
     label: "Bug description"
-    description: "Write a description of the bug."
-    description: "Remember that you can format code and logs nicely with the `<>` button"
+    description: |
+      Write a summary of the bug.
+      Remember that you can format code and logs nicely with the `<>` button.
     placeholder: >
       Try to explain it as clearly as possible.
   validations:
