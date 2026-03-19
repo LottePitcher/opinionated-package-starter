@@ -17,9 +17,9 @@
       "longName": "package-title",
       "shortName": "pt"
     },
-    "useDefaultPackagePrefix": {
-      "longName": "use-default-package-prefix",
-      "shortName": "udp"
+    "packagePrefix": {
+      "longName": "package-prefix",
+      "shortName": "pp"
     }
   }
 }

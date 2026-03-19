@@ -23,13 +23,12 @@ Parameters:
    - A solution file `\src\YourPackageName.sln`
    - A project for the package in the `\src\YourPackageName` folder
    - A test site for the package in the `\src\YourPackageName.TestSite` folder
-   - The nuget package id will be set as : `Umbraco.Community.YourPackageName` (unless you set `-udp` -> false, see `-udp` parameter below)
-     - Useful if you want your package to be `Org.Contoso.YourPackageName` and for the nuget package to also be like this instead of `Umbraco.Community.Org.Contoso.YourPackageName`
+   - The nuget package id will be set as `Umbraco.Community.YourPackageName` (customisable with `-pp`, see below)
 - `-an` or `--author-name` : the display name of the author, e.g. "Lotte Pitcher", used in license and readme
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
 - `-gr` or `--github-repo` : the GitHub repository name for the project
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
-- `-udp` or `--use-default-package-prefix` : whether the package should set the nuget package ID to be prefixed with `Umbraco.Community` or not
+- `-pp` or `--package-prefix` : the prefix for the NuGet package ID (defaults to `Umbraco.Community`, resulting in `Umbraco.Community.YourPackageName`). Set this as the empty string if you don't a prefix.
 
 The template includes running a script (`setup.cmd` / `setup.sh`). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
