@@ -28,11 +28,10 @@ Parameters:
 - `-gu` or `--github-user` : the username of the GitHub user/organisation that will be hosting the repository
 - `-gr` or `--github-repo` : the GitHub repository name for the project
 - `-pt` or `--package-title` : the title of the package to be used in readme headings and on the Umbraco Marketplace (if omitted, defaults to a 'friendlier' version of the `-n` parameter)
-- `-pp` or `--package-prefix` : the prefix for the NuGet package ID (defaults to `Umbraco.Community`, resulting in `Umbraco.Community.YourPackageName`). Set this as the empty string if you don't a prefix.
+- `-pp` or `--package-prefix` : the prefix for the NuGet package ID (defaults to `Umbraco.Community`, resulting in `Umbraco.Community.YourPackageName`). Set this as the empty string if you don't want a prefix.
 
 The template includes running a script (`setup.cmd` / `setup.sh`). For security reasons, dotnet templates will prompt for confirmation before executing the script. Either type Y when prompted, or add `--allow-scripts yes` to the dotnet command to avoid seeing that prompt.
 
-NB the setup script includes running a npm install command: so expect this process to take a fair while! 
 When the template has completed you'll see an "All done!" message in the command window.
 
 ## What do I do now?
@@ -56,7 +55,7 @@ The test site has already been configured to use [uSync](https://marketplace.umb
 
 Create a completely empty Github repository (no readme, license or git ignore file) with the name you used when running the template. Up to you whether it's public or private.
 
-The template setup script has already intialised your local git repo and added the GitHub remote url using the parameters you provided. Which means all you have to do now is your first git commit and push!
+The template setup script has already initialised your local git repo and added the GitHub remote url using the parameters you provided. Which means all you have to do now is your first git commit and push!
 
 ## Publishing to nuget and the Umbraco Marketplace
 
@@ -117,15 +116,15 @@ All good? Happy? If so, let's get this published!
 
 ### Publishing a release on nuget
 
-The template created a GitHub action (`\.github\workflows\release.yml`) that has been configured to publish to nuget whenever a tag is pushed to GitHub. When you first publish this package you might want to use to the version number 0.1.0 as this fits the [SemVer](https://semver.org/) scheme.
+The template created a GitHub action (`\.github\workflows\release.yml`) that has been configured to publish to nuget whenever a tag is pushed to GitHub. When you first publish this package you might want to use the version number 0.1.0 as this fits the [SemVer](https://semver.org/) scheme.
 
 The version number also needs to be set in `src\YourPackageName\Client\public\umbraco-package.json`. Then open a command prompt in the `Client` folder and `npm run build`.
 
-So when you're ready to publish, add a new tag with the name of the version you want to use (e.g. `0.1.0`) to the latest commit in git and push that tag to GitHub. The GitHub action will then run and, hopefully!, successfuly publish the release on GitHub. Click on the Actions tab of your GitHub repository to monitor its progress.
+So when you're ready to publish, add a new tag with the name of the version you want to use (e.g. `0.1.0`) to the latest commit in git and push that tag to GitHub. The GitHub action will then run and, hopefully!, successfully publish the release on GitHub. Click on the Actions tab of your GitHub repository to monitor its progress.
 
 ### Creating release notes on GitHub
 
-When the action has succesfully completed, you can create release notes on your GitHub repository so that users of your package can see what's been changed:
+When the action has successfully completed, you can create release notes on your GitHub repository so that users of your package can see what's been changed:
 
 - On the home page of your repo in GitHub click the 'X tags' link
 - Your new version should be listed: click the three dots and 'Create Release'

@@ -30,11 +30,11 @@ More information on the parameters to use, and what build commands to use after 
 Nothing! You can learn more about it from [this section](
 https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s) of the Umbraco 15 unboxing video or from [the official documentation](https://docs.umbraco.com/umbraco-cms/customizing/development-flow/umbraco-extension-template).
 
-It's just that all it gives you is the actual extension project. Which is fine if you're just wanting to build custom extensions for your Umbraco instance. But if you're going to want to release this functionality as an actual package then you'll need to set up a test site, configure it for nuget, work how you're going to release to nuget, add certain files for a well maintained repo ...
+It's just that all it gives you is the actual extension project. Which is fine if you're just wanting to build custom extensions for your Umbraco instance. But if you're going to want to release this functionality as an actual package then you'll need to set up a test site, configure it for nuget, work out how you're going to release to nuget, add certain files for a well maintained repo ...
 
 Whereas this template will create a folder with:
 
-- A new solution (.sln)
+- A new solution (.slnx)
 - A package project created using the core `umbraco-extension` template
 - A test site referencing the package project
 - A GitHub action for publishing to nuget when a tag is pushed
@@ -49,7 +49,7 @@ Whereas this template will create a folder with:
 
 - License: MIT
 - Umbraco version: 17.0.0
-- nuget package Id: `Umbraco.Community.YourPackageName`
+- nuget package Id: `Umbraco.Community.YourPackageName` (although this is configurable, see the parameters in [instructions](UsingTheTemplate.md))
 
 #### Why MIT license?
 
