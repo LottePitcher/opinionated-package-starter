@@ -175,7 +175,7 @@
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
-      "continueOnError": false
+      "continueOnError": true
     },
     {
       "description": "Setups the project by calling 'setup.sh'",
@@ -209,7 +209,7 @@
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
-      "continueOnError": false
+      "continueOnError": true
     },
     {
       "description": "Restore NuGet packages referenced in the solution",

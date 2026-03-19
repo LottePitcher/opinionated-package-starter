@@ -355,7 +355,7 @@ MigrationBackup/
 # Rider
 src/.idea
 
-# Common teplate testing directories
+# Common template testing directories
 test/
 testing/
 
