@@ -170,8 +170,8 @@
         }
       ],
       "args": {
-        "executable": "del",
-        "args": "setup.sh setup.cmd",
+        "executable": "cmd",
+        "args": "/c del setup.sh setup.cmd",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
