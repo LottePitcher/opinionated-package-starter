@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Product>Umbraco.Community.PackageStarter</Product>
-    <PackageId>Umbraco.Community.PackageStarter</PackageId>
+    <Product>PACKAGE_PREFIXPackageStarter</Product>
+    <PackageId>PACKAGE_PREFIXPackageStarter</PackageId>
     <Title>PACKAGE_TITLE</Title>
     <Description>...</Description>
     <PackageTags>umbraco;umbraco-marketplace</PackageTags>

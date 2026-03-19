@@ -50,7 +50,7 @@ This is the directory that gets installed as a `dotnet new` template. Everything
   - Auto-generated: `currentYear`, `httpPort`, `httpsPort`
   - `sourceName: "PackageStarter"` — this string gets replaced with the user's `-n` value throughout all file names and contents.
 
-- `setup.cmd` — Post-action script that runs after template generation. Initializes git, installs latest Umbraco templates, creates the package project using the core `umbraco-extension` template, replaces .csproj with nuget-configured version, wires up the solution.
+- `setup.cmd` / `setup.sh` — Post-action script that runs after template generation. Initializes git, installs latest Umbraco templates, creates the package project using the core `umbraco-extension` template, replaces .csproj with nuget-configured version, wires up the solution.
 
 - `src/PackageStarter.TestSite/` — Pre-configured Umbraco test site (SQLite, unattended install, uSync). References the package project locally.
 

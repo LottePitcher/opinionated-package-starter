@@ -34,8 +34,6 @@
     }
   ],
   "guids": [
-    "BAD983C8-B7F9-4F1D-B54E-E560A65B44CF",
-    "170E378E-7301-445B-ABBE-8FB85619A977",
     "2e8420d6-c69d-4139-9845-e155e71e6b19"
   ],
   "symbols": {
@@ -71,6 +69,29 @@
       "datatype": "string",
       "replaces": "PACKAGE_TITLE"
     },
+    "useDefaultPackagePrefix": {
+      "description": "Whether to use the default 'Umbraco.Community' prefix for the package id or just the template name as is.",
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "packagePrefixGen": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "PACKAGE_PREFIX",
+      "parameters": {
+        "cases": [
+          {
+            "condition": "(useDefaultPackagePrefix)",
+            "value": "Umbraco.Community."
+          },
+          {
+            "condition": "(!useDefaultPackagePrefix)",
+            "value": ""
+          }
+        ]
+      }
+    },
     "currentYear": {
       "type": "generated",
       "generator": "now",
@@ -96,6 +117,14 @@
         "fallback": 5001
       },
       "replaces": "44300"
+    },
+    "isWindows": {
+      "type": "computed",
+      "value": "(OS == \"Windows_NT\")"
+    },
+    "isUnix": {
+      "type": "computed",
+      "value": "(!isWindows)"
     }
   },
   "forms": {
@@ -117,12 +146,66 @@
     {
       "description": "Setups the project by calling 'setup.cmd'",
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isWindows)",
       "manualInstructions": [
-        { "text": "Run 'setup.cmd'" }
+        {
+          "text": "Run 'setup.cmd'"
+        }
       ],
       "args": {
         "executable": "setup.cmd",
         "args": "",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
+      },
+      "continueOnError": false
+    },
+    {
+      "description": "Cleanup the setup scripts",
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isWindows)",
+      "manualInstructions": [
+        {
+          "text": "Run 'del setup.sh setup.cmd'"
+        }
+      ],
+      "args": {
+        "executable": "del",
+        "args": "setup.sh setup.cmd",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
+      },
+      "continueOnError": false
+    },
+    {
+      "description": "Setups the project by calling 'setup.sh'",
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isUnix)",
+      "manualInstructions": [
+        {
+          "text": "Run 'setup.sh'"
+        }
+      ],
+      "args": {
+        "executable": "sh",
+        "args": "setup.sh",
+        "redirectStandardOutput": false,
+        "redirectStandardError": false
+      },
+      "continueOnError": false
+    },
+    {
+      "description": "Cleanup the setup scripts",
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(isUnix)",
+      "manualInstructions": [
+        {
+          "text": "Run 'rm setup.sh setup.cmd'"
+        }
+      ],
+      "args": {
+        "executable": "rm",
+        "args": "setup.sh setup.cmd",
         "redirectStandardOutput": false,
         "redirectStandardError": false
       },
@@ -140,9 +223,11 @@
     },
     {
       "description": "All done!",
-      "manualInstructions": [{
-        "text": "Learn more about the development workflow for your Umbraco package/extension project at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
-      }],
+      "manualInstructions": [
+        {
+          "text": "Learn more about the development workflow for your Umbraco package/extension project at https://www.youtube.com/watch?v=6NzPtZokjG4&t=2213s"
+        }
+      ],
       "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
       "continueOnError": true
     }
