@@ -59,14 +59,22 @@ The template setup script has already initialised your local git repo and added 
 
 ## Publishing to nuget and the Umbraco Marketplace
 
-The package project .csproj has already been configured to have the `umbraco-marketplace` tag on the nuget package. This means that the Marketplace will automatically find and index the package once you have published it to nuget. If you don't want that to happen then remove this tag.
-
 Before you publish your package on nuget you should update:
 
 - The `.csproj` in the package project and set the Title property (and check the others)
 - `\.github\README.md` - this is the readme of your open source repository on GitHub
 - `.\docs\README_nuget.md` - this is the readme that will show on nuget.org
 - The `umbraco-marketplace.json` file in the root of your repository and update the `Category` property (see the [supported categories](https://docs.umbraco.com/umbraco-dxp/marketplace/listing-your-package#categories) for more information)
+
+### Publishing to the Umbraco Marketplace
+
+If you want your package to be published to the [Umbraco Marketplace](https://marketplace.umbraco.com), you need to add the `umbraco-marketplace` tag to your package on nuget. To do this:
+
+1. Open the package project `.csproj` file
+2. Find the `<PackageTags>` element and add `umbraco-marketplace` to the list of tags
+3. The tag should look like: `<PackageTags>umbraco;umbraco-marketplace</PackageTags>`
+
+Once you publish a nuget package with this tag, the Umbraco Marketplace will automatically find and index your package. Only add this tag when you're ready for your package to be listed publicly.
 
 ### Package logo
 

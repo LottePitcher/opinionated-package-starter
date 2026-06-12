@@ -11,7 +11,7 @@
     <PackageId>NUGET_PACKAGE_ID</PackageId>
     <Title>PACKAGE_TITLE</Title>
     <Description>...</Description>
-    <PackageTags>umbraco;umbraco-marketplace</PackageTags>
+    <PackageTags>umbraco</PackageTags>
     <Authors>AUTHOR_NAME</Authors>
     <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © AUTHOR_NAME</Copyright>
     <PackageProjectUrl>https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY</PackageProjectUrl>
@@ -28,7 +28,7 @@
     <PackageReference Include="Umbraco.Cms.Api.Common" />
     <PackageReference Include="Umbraco.Cms.Api.Management" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <!-- Dont include the client folder as part of packaging nuget build -->
     <Content Remove="Client\**" />
@@ -36,7 +36,7 @@
     <!-- However make the Umbraco-package.json included for dotnet pack or nuget package and visible to the solution -->
     <None Include="Client\public\umbraco-package.json" Pack="false" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Include="..\..\docs\README_nuget.md">
       <Pack>True</Pack>
