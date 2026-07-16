@@ -60,7 +60,7 @@ Because Umbraco CMS is released with an MIT license, and I've assumed you're rel
 Umbraco 17 is the current Long Term Support (LTS) release.
 By targeting 17.0.0, your package can be installed on any Umbraco 17 site.
 
-If there is a need to restrict your package to a later version of 17 then you should raise the dependency in the .csproj file of both projects in your solution. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for an earlier discussion about what versions to support.
+If there is a need, or you want, to restrict your package to a later version of 17 then you should raise the version in `Directory.Packages.props`, which centrally manages package versions for both projects in your solution. Refer to [issue 10](https://github.com/LottePitcher/opinionated-package-starter/issues/10) for an earlier discussion about what versions to support.
 
 #### Why a 'Umbraco.Community.* nuget package id?
 
