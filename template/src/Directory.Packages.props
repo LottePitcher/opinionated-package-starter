@@ -12,6 +12,7 @@
     <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.0.0" />
     <PackageVersion Include="uSync" Version="17.0.0" />
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+    <PackageVersion Include="Umbraco.Community.WorktreeDevPort" Version="0.4.1" />
   </ItemGroup>
 
 </Project>

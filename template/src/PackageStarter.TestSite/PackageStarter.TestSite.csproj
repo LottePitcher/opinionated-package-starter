@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" />
+    <PackageReference Include="Umbraco.Community.WorktreeDevPort" />
   </ItemGroup>
 
   <ItemGroup>
