@@ -117,10 +117,18 @@ All good? Happy? If so, let's get this published!
 
 ### Configuring GitHub for nuget
 
+The GitHub action publishes with [NuGet Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing), so there is no long-lived API key to create, store or rotate. nuget.org trusts the release workflow in your repository instead, and gives each run an API key that lasts one hour.
+
 1. Login to nuget.org with the account that you want to publish the package to
-2. Use the 'API Keys' option to create a new key that is allowed to create new packages (using the 'glob' pattern of *), and copy this key
+2. Click your username, choose 'Trusted Publishing' and add a policy with:
+   - Repository Owner: the GitHub user/organisation that hosts the repository
+   - Repository: the name of the GitHub repository
+   - Workflow File: `release.yml` (the file name only, no path)
+   - Environment: leave empty
 3. In your repository on GitHub.com navigate to Settings > Secret and variables > Actions
-4. Create a new repository secret with the name `NUGET_API_KEY` and paste the key from step 2
+4. Create a new repository secret with the name `NUGET_USER` and set it to your nuget.org username (your profile name, not your email address)
+
+A new policy is only active for 7 days until it has been used for a successful publish, after which it becomes permanent, so create it when you are close to your first release.
 
 ### Publishing a release on nuget
 
