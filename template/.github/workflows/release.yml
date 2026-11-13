@@ -1,6 +1,17 @@
 name: Release Package
 
 # This action will start when a correctly formatted tag is pushed (e.g. 0.1.0)
+#
+# It publishes with NuGet Trusted Publishing, so no long-lived API key is stored in the repository.
+# GitHub issues a short-lived token for this run, nuget.org checks it against the trusted publishing
+# policy for this repository and this workflow file, and returns an API key that lasts one hour.
+# https://learn.microsoft.com/nuget/nuget-org/trusted-publishing
+#
+# One-off setup:
+#   1. On nuget.org: your username > Trusted Publishing > add a policy with
+#        Repository Owner: GITHUB_USERNAME    Repository: GITHUB_REPOSITORY    Workflow File: release.yml
+#   2. In this repository: Settings > Secrets and variables > Actions > add the secret NUGET_USER,
+#      set to your nuget.org username (the profile name, not your email address)
 
 on:
   push:
@@ -10,6 +21,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write  # lets this job ask GitHub for the token that nuget.org checks
 
     steps:
       - name: Checkout repository
@@ -23,5 +38,12 @@ jobs:
       - name: Build & Pack
         run: dotnet pack src/PackageStarter/PackageStarter.csproj -c Release /p:Version=${{github.ref_name}}
 
+      # Ask for the key just before pushing: it is only valid for one hour
+      - name: NuGet login (exchange the GitHub token for a short-lived API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Push to NuGet
-        run: dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push **/*.nupkg -k ${{ steps.login.outputs.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
